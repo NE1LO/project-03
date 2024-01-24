@@ -1,0 +1,85 @@
+<div class="modal-trane-background">
+  <div class="modal-trane">
+    <button class="modal-trane-btn-close" type="button">
+      <svg height="28" width="28" style="stroke: black">
+        <use href="./img/symbol-defs.svg#icon-x"></use>
+      </svg>
+    </button>
+    <div class="modal-trane-img-container">
+      <img src="" alt="" />
+    </div>
+    <div>
+      <div class="modal-trane-name-rating">
+        <h2 class="modal-trane-title">Air bake</h2>
+        <div class="modal-trane-rating-star">
+          <p class="modal-trane-ratind">4.0</p>
+          <ul class="modal-trane-list-stars"></ul>
+        </div>
+      </div>
+      <ul class="modal-trane-list-information">
+        <li>
+          <p class="modal-trane-title-information">Target</p>
+          <p class="modal-trane-information-text">Abs</p>
+        </li>
+        <li>
+          <p class="modal-trane-title-information">Target</p>
+          <p class="modal-trane-information-text">Abs</p>
+        </li>
+        <li>
+          <p class="modal-trane-title-information">Target</p>
+          <p class="modal-trane-information-text">Abs</p>
+        </li>
+        <li>
+          <p class="modal-trane-title-information">Target</p>
+          <p class="modal-trane-information-text">Abs</p>
+        </li>
+      </ul>
+      <p class="modal-trane-text">
+        This refers to your core muscles, which include the rectus abdominis,
+        obliques, and transverse abdominis. They're essential for maintaining
+        posture, stability, and generating force in many movements. Exercises
+        that target the abs include crunches, leg raises, and planks.
+      </p>
+      <ul class="modal-trane-list-btn">
+        <li>
+          <button class="modal-trane-btn-add-favorites" type="button">
+            Add&nbsp;to&nbsp;favorites&nbsp;&#x2661;
+          </button>
+        </li>
+        <li>
+          <button class="modal-trane-btn-rating" type="button">
+            Give a rating
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    const createStarsMarkup = int => {
+      const starsMarkup = [
+        './img/symbol-defs.svg#icon-star',
+        './img/symbol-defs.svg#icon-star',
+        './img/symbol-defs.svg#icon-star',
+        './img/symbol-defs.svg#icon-star',
+        './img/symbol-defs.svg#icon-star',
+      ];
+      const goldStar = './img/symbol-defs.svg#icon-star-gold';
+      const number = parseFloat(int);
+      starsMarkup.forEach((_, index) => {
+        if (index + 1 <= number) starsMarkup[index] = goldStar;
+      });
+      return starsMarkup.reduce((html, item) => {
+        return (
+          html +
+          ` <li>
+                <svg height="18" width="18">
+                  <use href="${item}"></use>
+                </svg>
+              </li>`
+        );
+      }, '');
+    };
+    const list = document.querySelector('.modal-trane-list-stars');
+    list.innerHTML = createStarsMarkup(4);
+  </script>
+</div>
