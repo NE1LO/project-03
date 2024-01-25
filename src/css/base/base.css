@@ -1,9 +1,9 @@
 body {
   font-family: 'Roboto', sans-serif;
   color: #ffff;
-  background-color: #202020;
+  background-color: #f6f6f6;
   margin: 0;
-  padding: 0;
+  padding: 16px;
 }
 
 h1,

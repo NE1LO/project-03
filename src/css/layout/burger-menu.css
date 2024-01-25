@@ -1,1 +1,112 @@
+@media screen and (max-width: 768px) {
+  .burger-menu-block {
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
 
+  .burger-menu {
+    height: 95%;
+    max-width: 300px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    z-index: 999999999;
+    padding: 20px 20px 40px 20px;
+    background-color: #7e847f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .burger-menu__header-mobile-menu {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 140px;
+  }
+
+  .burger-menu__link {
+    color: #f6f6f6;
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 112%;
+    letter-spacing: -0.32px;
+  }
+
+  .burger-menu__btn-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1c2225;
+    border: none;
+    background-color: transparent;
+  }
+
+  .burger-menu__icon-close {
+    stroke: #f6f6f6;
+  }
+
+  /* ----------------------------------------------------------- */
+
+  .burger-menu__pages-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+  }
+
+  .burger-menu__pages-list__item__link {
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .page-active {
+    color: #1b1b1b;
+    font-style: normal;
+    line-height: 24px;
+    color: black;
+    display: flex;
+    padding: 6px 26px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: #fff;
+  }
+
+  /* ------------------------------------------------------------- */
+
+  .burger-menu__social-link-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .burger-menu__social-link-list__link {
+    display: flex;
+    padding: 8px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 10px;
+    border: 1px solid rgba(246, 246, 246, 0.2);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .burger-menu-block {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
