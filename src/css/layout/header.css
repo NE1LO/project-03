@@ -1,0 +1,135 @@
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+
+  .page-list {
+    display: none;
+  }
+
+  .sm-list {
+    display: none;
+  }
+
+  .header-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .logo-link {
+    color: #1b1b1b;
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; /* 112.5% */
+    letter-spacing: -0.32px;
+  }
+
+  .icon-burger {
+    width: 32px;
+    height: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  .button-burger {
+    display: none;
+  }
+
+  .header-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+  }
+
+  .logo-link {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 28px; /* 100% */
+    letter-spacing: -0.56px;
+    margin-top: 44px;
+  }
+
+  .page-list {
+    display: flex;
+    height: 52px;
+    border-radius: 60px;
+    background: #7e847f;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    margin-top: 32px;
+  }
+
+  .page-list-item-home {
+    display: flex;
+    padding: 6px 26px;
+    border-radius: 30px;
+    justify-content: center;
+    background-color: #ffff;
+  }
+
+  .page-list-item-fav {
+    display: flex;
+    padding: 6px;
+    border-radius: 30px;
+    justify-content: center;
+  }
+
+  .page-link {
+    color: #1b1b1b;
+    font-family: 'DM Sans' sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+  }
+
+  .page-link.fav {
+    color: #f6f6f6;
+  }
+  .sm-list {
+    display: flex;
+    gap: 12px;
+    margin-top: 36px;
+  }
+
+  .sm-list-item {
+    width: 46px;
+    height: 46px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid rgba(126, 132, 127, 0.2);
+  }
+
+  .sm-link {
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    gap: 8px;
+  }
+  .icon {
+    height: 28px;
+    fill: #7e847f;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0 100px;
+  }
+
+  .button-burger {
+    display: none;
+  }
+
+  .icon:hover,
+  .icon:focus {
+    fill: #5f6560;
+  }
+}
