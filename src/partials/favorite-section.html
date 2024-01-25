@@ -1,50 +1,54 @@
-<section class="section">
-    <div class="container">
-     
-      <div class="favorites__general-container">
-        <div class="favorites__general-wrap">
-
-          <div class="favorite-quote__container">
-            <div class="favorite-svg__circle">
-              <svg class="favorite__svg" width="20" height="20">
-                <use href="./img/symbol-defs.svg#icon-icon"></use>
-              </svg>
-            </div>
-            <h3 class="favorite-quote__title">Quote of the day</h3>
-            <svg class="commas__svg" width="28" height="28">
-
-              <use href="./img/symbol-defs.svg#icon-inverted-commas"></use>
-            </svg>
-            <div class="favorite-quote__wrapper js-quote">
-              <p class="favorite-quote__text">
-                A lot of times I find that people who are blessed with the most talent don't ever develop that attitude, and the ones who aren't blessed in that way are the most competitive and have the biggest heart.
-              </p>
-              <h4 aria-colcount="favorite-quote__autor" >Tom Brady</h4>
-            </div>
-          </div>
-
-
-          <ul class="favorites__card-list">
-            
-            <li>
-              <div class="img-card__container"></div>
-            </li>
-
-            <li>
-              <div class="favorite__white-card">
-               <div class="favorite__white-card-text">
-                <svg class="white-card__svg" width="20" height="20">
-                  <use href="./img/symbol-defs.svg#icon-search"></use>
-                </svg>
-                <h3 class="white-card__headline">10 mins</h3>
-                <p class="white-card__text">Daily norm of sports</p>
-               </div>
-              </div>
-            </li>
-          </ul>
+<section class="favorite-hero-section">
+  <div class="container favorites-hero-container">
+    <div class="favorite-quote__container">
+      <div>
+        <svg width="34" height="34">
+          <use href="./img/symbol-defs.svg#icon-icon"></use>
+        </svg>
+      </div>
+      <div>
+        <div class="favorite-svg__circle">
+          <h3 class="favorite-quote__title">Quote of the day</h3>
+          <svg class="commas__svg" width="28" height="28">
+            <use href="./img/symbol-defs.svg#icon-inverted-commas"></use>
+          </svg>
         </div>
-  
-        
+        <p class="favorite-quote__text">
+          A lot of times I find that people who are blessed with the most talent
+          don't ever develop that attitude, and the ones who aren't blessed in
+          that way are the most competitive and have the biggest heart.
+        </p>
+        <p class="favorite-quote__autor">Tom Brady</p>
       </div>
     </div>
-  </section>
+
+    <div class="favorite-hero-img-container">
+      <img
+        class="collection-img"
+        srcset="
+          ./img/favorite-hero/favorite-hero-img.jpg            335w,
+          ./img/favorite-hero/favorite-hero-img@2x.jpg         670w,
+          ./img/favorite-hero/favorite-hero-img-tablet.jpg     368w,
+          ./img/favorite-hero/favorite-hero-img-tablet@2x.jpg  736w,
+          ./img/favorite-hero/favorite-hero-img-desktop.jpg    352w,
+          ./img/favorite-hero/favorite-hero-img-desktop@2x.jpg 704w
+        "
+        sizes="(min-width:1440px) 352px, (min-width:768px) 368px, (min-width:320px) 335px"
+        src="./img/favorite-hero/favorite-hero-img.jpg"
+        alt=""
+      />
+    </div>
+
+    <div class="favorite__white-card">
+      <ul class="favorite__white-card-list">
+        <li>
+          <svg class="white-card__svg" width="20" height="20">
+            <use href="./img/symbol-defs.svg#icon-fluent-food-filled"></use>
+          </svg>
+        </li>
+        <li><h3 class="white-card__headline">10 min</h3></li>
+        <li><p class="white-card__text">Daily norm of sports</p></li>
+      </ul>
+    </div>
+  </div>
+</section>

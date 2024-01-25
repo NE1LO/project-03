@@ -154,7 +154,7 @@
     font-size: 24px;
   }
 }
-@media screen and (min-width: 1480px) {
+@media screen and (min-width: 1440px) {
   .render-page-one-list {
     gap: 40px 20px;
   }

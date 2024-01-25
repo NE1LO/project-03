@@ -153,7 +153,7 @@
     width: 140px;
   }
 }
-@media screen and (min-width: 1480px) {
+@media screen and (min-width: 1440px) {
   .modal-trane {
     width: 732px;
     gap: 40px;
