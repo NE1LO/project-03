@@ -1,0 +1,121 @@
+.important-img {
+    background-image: url(../../img/important-minutes/mobile.png);
+    background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 335px;
+        border-radius: 30px;
+        
+}
+
+.important-card {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-top: 40px;
+}
+.important-svg {
+
+    background-color: rgba(246, 246, 246, 0.10);
+    ;
+    padding: 6px;
+    border-radius: 50%;    
+}
+.important-title {
+    color: #F6F6F6;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    padding-left: 18px;
+}
+
+.important-title-text {
+    color: rgba(246, 246, 246, 0.60);
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    padding-left: 70px;
+}
+
+.important-text {
+    color: rgba(246, 246, 246, 0.60);
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    padding-top: 14px;
+    padding-left: 70px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+
+}
+
+.important-container {
+    background: #1B1B1B;
+    border-radius: 30px;
+}
+
+@media screen and (min-width: 768px) {
+.important-img {
+background-image: url(../../img/important-minutes/tablet.png);
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+height: 302px;
+border-radius: 50px;
+    
+}
+.important-container {
+background: #1B1B1B;
+border-radius: 30px;
+max-width: 767px;
+height: 302px;
+}
+.important-card {
+  
+    padding-left: 64px;
+    padding-top: 64px;
+    
+}
+.important-text {
+    padding-top: 25px;
+    padding-left: 114px;
+    padding-right: 96px;
+    padding-bottom: 64px;
+}
+.important-title-text {
+   
+    padding-left: 114px;
+}
+
+}
+
+@media screen and (min-width: 1440px) {
+  
+.important-img {
+width: 704px;
+height: 302px;
+}
+
+.important-container {
+    background: #1B1B1B;
+    border-radius: 30px;
+    max-width: 704px;
+    height: 302px;
+    
+}
+
+.important-item {
+    display: flex;
+}
+.important-list{
+    display: flex;
+}
+
+}
