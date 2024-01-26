@@ -2,6 +2,7 @@
 @import url(./base/base.css);
 
 @import url(./layout/burger-menu.css);
+@import url(./layout/header.css);
 @import url(./layout/home-hero-section.css);
 @import url(./layout/favorite-section.css);
 @import url(./layout/modal-trane.css);
