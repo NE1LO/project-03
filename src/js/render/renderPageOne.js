@@ -9,5 +9,4 @@ const filterParam = {
 };
 export const renderPageOne = async () => {
   const data = await allApi.getFilters(filterParam);
-  console.log(data);
 };
