@@ -1,6 +1,7 @@
 .hero {
   margin-top: 20px;
 }
+
 .hero-first-container {
   display: flex;
   flex-direction: column;
@@ -135,13 +136,14 @@
 }
 
 .hero-fourth-container {
-  background-image: url(/src/img/home-hero-section/second-backgroudImg.png);
+  background-image: url(../../img/home-hero-section/second-backgroudImg.png);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   width: 100%;
   height: 272px;
   margin-bottom: 20px;
+  border-radius: 30px;
 }
 
 @media screen and (min-width: 768px) {
@@ -150,10 +152,10 @@
     flex-wrap: wrap;
   }
   .hero-first-container {
-    width: 248px;
+    width: 30%;
     height: 900px;
-    background-image: url(/src/img/home-hero-section/first-backgroudImage2.png);
-    border-radius: 0;
+    background-image: url(../../img/home-hero-section/first-backgroudImage2.png);
+    border-radius: 50px 0 50px 50px;
   }
 
   .hero-first-container-ul {
@@ -169,7 +171,7 @@
     padding: 4px 16px;
   }
   .hero-second-container {
-    width: 488px;
+    width: 70%;
     height: 900px;
     padding: 0;
     border-radius: 0 50px 50px 50px;
@@ -186,7 +188,7 @@
   }
 
   .hero-third-container {
-    width: 736px;
+    width: 100%;
     height: 302px;
     border-radius: 50px;
     padding: 0;
@@ -221,17 +223,17 @@
     margin-top: 25px;
   }
   .hero-fourth-container {
-    width: 736px;
+    width: 100%;
     height: 302px;
-    background-image: url(/src/img/home-hero-section/second-backgroudImg2.png);
+    background-image: url(../../img/home-hero-section/second-backgroudImg2.png);
   }
 }
 
 @media screen and (min-width: 1440px) {
   .hero-first-container {
-    width: 704px;
+    width: 50%;
     height: 884px;
-    background-image: url(/src/img/home-hero-section/first-backgroudImage.png);
+    background-image: url(../../img/home-hero-section/first-backgroudImage.png);
   }
 
   .hero-first-container-ul {
@@ -244,7 +246,7 @@
   }
 
   .hero-second-container {
-    width: 704px;
+    width: 50%;
     height: 884px;
   }
 
@@ -254,12 +256,12 @@
   }
 
   .hero-third-container {
-    width: 704px;
+    width: 50%;
     height: 302px;
   }
 
   .hero-fourth-container {
-    width: 704px;
+    width: 50%;
     height: 302px;
     border-radius: 50px;
   }
