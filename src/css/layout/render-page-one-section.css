@@ -2,7 +2,16 @@
   background-color: #e8e8e8;
   border-radius: 30px;
   padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
 }
+
+.render-page-block {
+  max-width: 1312px;
+}
+
 .render-page-one-title {
   color: #1b1b1b;
   font-size: 32px;
@@ -41,15 +50,15 @@
 .render-page-one-list {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  justify-content: center;
+  align-items: flex-start;
   gap: 20px;
   margin-bottom: 20px;
 }
 .render-page-one-item {
   overflow: hidden;
   background-size: cover;
-  max-width: 295px;
+  max-width: 305px;
   height: 232px;
   display: flex;
   align-items: center;
