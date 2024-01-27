@@ -1,4 +1,4 @@
-import { apiInstance } from './services/API';
+import { apiInstance } from './services/api';
 
 const getFilters = async object => {
   try {
