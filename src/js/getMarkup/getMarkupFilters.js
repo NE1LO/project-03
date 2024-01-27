@@ -6,7 +6,7 @@ export const getMarkupFilters = async param => {
   const markup = arrayData.reduce((html, item) => {
     return (
       html +
-      ` <li class="render-page-one-item">
+      ` <li class="render-page-one-item" data-name="${item.name}">
             <img src="${item.imgUrl}" alt="" />
             <div class="render-page-one-img-container">
               <p class="render-page-one-item-title">${item.name}</p>
