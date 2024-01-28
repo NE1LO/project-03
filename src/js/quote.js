@@ -1,7 +1,7 @@
 "use strict";
 
-const quote = document.querySelector('.hero-third-container-text');
-const icons = document.querySelector('.hero-third-container-quotesSvg');
+const paragraph = document.querySelector('.hero-third-container-text');
+const author = document.querySelector('.hero-third-container-author');
 const STORAGE_KEY = 'backend-feedback';
 
 
@@ -17,7 +17,8 @@ const STORAGE_KEY = 'backend-feedback';
 const url = 'https://energyflow.b.goit.study/api/quote'; 
 console.log(url);
 
-fetch(url)
+if(new Date() !== JSON.parse(localStorage.getItem(STORAGE_KEY)).date){
+    fetch(url)
     .then(response => {
    
       if (!response.ok) {
@@ -29,33 +30,25 @@ fetch(url)
 
     .then(text => {
     let dateTime = new Date();
-    let arrInfSet ={
+    let arrInfSet = {
         quote: text.quote,
         author: text.author,
         date: dateTime,
     }  
-    console.log(arrInfSet);
     localStorage.setItem('backend-feedback', JSON.stringify(arrInfSet));
-        return ;
+        return;
       }   
     )
-    .then(value => {
-        const objToArray = Array.from(value);
-        console.log(objToArray);
+    .then(text => {
+      const obj = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      console.log(obj);
+      paragraph.textContent = obj.quote;
+      author.textContent = obj.author;
+      console.log(author.textContent = obj.author);
+      return;  
     })
     .catch(error => {
         console.log(error);
-    });
-      
-    
+    }); 
+};
 
-   /* icons.insertAdjacentHTML('afterend', addImages(text);*/
-
-    function addQuates(text) {
-        return text.reduce((html, tex) => html + `
-        <p class="hero-third-container-text">
-            ${tex.quote}
-            <span class="hero-third-container-author">${tex.author}</span>
-        </p>
-        `, "");
-      }
