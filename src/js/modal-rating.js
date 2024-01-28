@@ -1,4 +1,6 @@
 import { apiInstance } from './services/api';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 
 const backdrop = document.querySelector('.modal-rating-background');
@@ -54,37 +56,89 @@ const form = document.querySelector('.modal-rating-form');
 const emailInput = document.querySelector('.modal-rating-email');
 const textarea = document.querySelector('.modal-rating-comment');
 
-form.addEventListener('submit', function (event) {
-  event.preventDefault();
-  console.log({
-    _id: '64f389465ae26083f39b17a4',
-    rate: event.target.radiostar.value,
-    email: event.target.email.value,
-     review: textarea.value,
+const showIziToast = (options) => {
+  iziToast.show({
+    position: 'topRight',
+    messageColor: '#FFFFFF',
+    backgroundColor: '#EF4040',
+    titleSize: '8px',
+    closeOnEscape: true,
+    ...options,
   });
+};
 
+ form.addEventListener('submit', async function (event) {
+  event.preventDefault();
+
+  const rate = parseInt(event.target.radiostar.value, 10);
+  const email = event.target.email.value;
+  const review = textarea.value;
+
+  if (isNaN(rate)) {
+    showIziToast({
+      message: 'Please select a valid rate.',
+    });
+    return; 
+  }
+
+  if (!email.trim()) {
+    showIziToast({
+     message: 'Email is required.',
+    });
+    return; 
+  }
+
+    if (!review.trim()) {
+    showIziToast({
+     message: 'Textarea is required.',
+    });
+    return; 
+  }
+      
+  const data = {
+    rate: rate,
+    email: email,
+    review: review,
+  };
+   
   if (emailInput.checkValidity()) {
-    apiInstance
-      .patch(`exercises/${"64f389465ae26083f39b17a4"}/rating`, {
-        params: {
-          rate: event.target.radiostar.value,
-          email: event.target.email.value,
-           review: textarea.value,
-        },
-      })
-      .then(response => {
-        if (response.ok) {
-          closeModal();
-          alert.log(
-            'We are excited to have you on board! 🎉 Thank you for subscribing to new exercises on Energy Flow. You have just taken a significant step towards improving your fitness and well-being.'
-          );
-        } else {
-          alert.error('Subscription failed');
-        }
-      })
-      .catch(error => {
-        console.error(error.message);
+    try {
+      const response = await apiInstance.patch(`exercises/${"64f389465ae26083f39b1ae3"}/rating`, data);
+ console.log('Response:', response); 
+      if (response.status === 200) {
+        closeModal();
+         showIziToast({
+        backgroundColor: '#7e847f',
+          message:
+          'We are excited to have you on board! 🎉 Thank you for subscribing to new exercises on Energy Flow. You have just taken a significant step towards improving your fitness and well-being.'
+          });
+      
+      }
+      else if (response.data && response.data.message === "Such email already exists") {
+        showIziToast({
+          message:
+          'Email already exists. Please use a different email address.',
       });
+      } 
+      else {
+        const errorMessage = response.data?.message || 'Subscription failed';
+        showIziToast({
+          message: errorMessage,
+        });            
+        }
+    } catch (error) {
+      console.error('Error:', error);
+      if (error.response && error.response.status === 409) {
+      
+        showIziToast({
+          message: 'Email already exists. Please use a different email address.',
+        });
+      } else {
+        showIziToast({
+          message: 'An error occurred while processing your request.',
+        });
+      }
+    }
+  
   }
 });
-
