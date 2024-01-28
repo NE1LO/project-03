@@ -1,4 +1,4 @@
-import { apiInstance } from './services/API';
+import { apiInstance } from './services/api';
 
 const getFilters = async object => {
   try {
@@ -9,4 +9,12 @@ const getFilters = async object => {
   }
 };
 
-export const allApi = { getFilters };
+const getWorkout = async object => {
+  try {
+    return await apiInstance.get('exercises', { params: object });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const allApi = { getFilters, getWorkout };
