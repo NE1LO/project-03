@@ -5,4 +5,3 @@ renderPageOne(getMarkupFilters());
 import './js/pagination';
 // import './js/mobile.menu';
 
-import './js/modal-rating';
