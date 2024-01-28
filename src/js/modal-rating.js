@@ -7,10 +7,8 @@ const backdrop = document.querySelector('.modal-rating-background');
 const closeButton = document.querySelector('.modal-rating-btn-close');
 const ratingButton = document.querySelector('.modal-trane-btn-rating');
 
-console.log(backdrop);
-
 export function openModal() {
-  backdrop.style.display = 'block';
+  backdrop.style.display = 'flex';
 }
 
 function closeModal() {

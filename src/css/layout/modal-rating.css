@@ -4,11 +4,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background-color: rgba(27, 27, 27, 0.6);
 }
+
 .modal-rating {
   width: 335px;
   height: 357px;
@@ -17,9 +18,11 @@
   position: relative;
   padding: 40px 20px;
 }
+
 .modal-rating-svg-close {
   stroke: black;
 }
+
 .modal-rating-btn-close {
   border: none;
   background-color: transparent;
@@ -30,12 +33,14 @@
   top: 14px;
   right: 14px;
 }
+
 .modal-rating-title {
   color: rgba(27, 27, 27, 0.4);
   font-size: 12px;
   line-height: 18px;
   margin-bottom: 8px;
 }
+
 .modal-rating-radio-list {
   display: flex;
   align-items: center;
@@ -43,6 +48,7 @@
   gap: 6px;
   margin-bottom: 20px;
 }
+
 .modal-rating-rating {
   color: #1b1b1b;
   font-feature-settings: 'clig' off, 'liga' off;
@@ -52,6 +58,7 @@
   font-weight: 400;
   line-height: 18px;
 }
+
 .modal-rating-radio {
   position: absolute;
   width: 1px;
@@ -64,9 +71,11 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 .modal-rating-svg-star {
   fill: rgba(27, 27, 27, 0.2);
 }
+
 .modal-rating-svg-star-gold {
   fill: #eea10c;
 }
@@ -90,10 +99,12 @@
   outline: transparent;
   transition: border 250ms linear;
 }
+
 .modal-rating-email:hover,
 .modal-rating-email:focus {
   border: 2px solid #1b1b1b;
 }
+
 .modal-rating-comment {
   width: 295px;
   height: 93px;
@@ -106,10 +117,12 @@
   outline: transparent;
   transition: border 250ms linear;
 }
+
 .modal-rating-comment:hover,
 .modal-rating-comment:focus {
   border: 2px solid #1b1b1b;
 }
+
 .modal-rating-btn {
   height: 42px;
   width: 295px;
@@ -126,33 +139,40 @@
   line-height: 18px;
   transition: background-color 250ms linear;
 }
+
 .modal-rating-btn:focus,
 .modal-rating-btn:hover {
   background-color: #5f6560;
 }
+
 @media screen and (min-width: 768px) {
   .modal-rating {
     width: 450px;
     height: 432px;
     padding: 50px;
   }
+
   .modal-rating-svg-close {
     width: 28px;
     height: 28px;
   }
+
   .modal-rating-radio-list {
     margin-bottom: 32px;
   }
+
   .modal-rating-email {
     width: 350px;
     height: 48px;
     margin-bottom: 16px;
   }
+
   .modal-rating-comment {
     width: 350px;
     margin-bottom: 32px;
     height: 106px;
   }
+
   .modal-rating-btn {
     width: 350px;
     height: 48px;
