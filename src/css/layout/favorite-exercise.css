@@ -1,0 +1,87 @@
+.favorites-exercise-section,
+.favorites-exercise-container {
+  background-color: #e8e8e8;
+  border-radius: 30px;
+  margin-bottom: 16px;
+  height: 450px;
+  opacity: 1;
+  list-style: none;
+}
+
+.favorites-exercise-title {
+  color: #000000;
+  text-align: start;
+  font-weight: 400;
+  line-height: 32px;
+  font-size: 32px;
+  letter-spacing: -2px;
+  padding: 40px 0 0 20px;
+}
+
+.favorites-exercise-not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.favorites-exercise-not-found {
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+  padding: 0 45px 0 45px;
+}
+
+.favorites-exercise-img {
+  opacity: 2;
+  width: 85px;
+  padding: 80px 0 28px 0;
+}
+.workout-card__basket-icon {
+  padding-left: 10px;
+  width: 16px;
+  height: 16px;
+}
+.icon-basket {
+  fill: #e8e8e8;
+  stroke: #000000;
+}
+@media screen and (min-width: 768px) {
+  .favorites-exercise-section,
+  .favorites-exercise-container {
+    height: 928px;
+  }
+
+  .favorites-exercise-title {
+    font-size: 44px;
+    line-height: 48px;
+    padding: 63px 0 0 50px;
+  }
+
+  .favorites-exercise-not-found {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 91px 0 91px;
+  }
+
+  .favorites-exercise-img {
+    width: 115px;
+    padding-top: 200px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .favorites-exercise-section,
+  .favorites-exercise-container {
+    height: 687px;
+  }
+
+  .favorites-exercise-not-found {
+    padding: 0 437px 0 427px;
+  }
+  .favorites-exercise-img {
+    padding-top: 146px;
+  }
+}
