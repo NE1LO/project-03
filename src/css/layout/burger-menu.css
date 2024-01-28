@@ -1,5 +1,7 @@
 @media screen and (max-width: 768px) {
   .burger-menu-block {
+    background: rgba(16, 16, 16, 0.742);
+    z-index: 999999999;
     position: fixed;
     right: 0;
     top: 0;
@@ -15,7 +17,6 @@
     max-width: 300px;
     border-radius: 30px;
     box-sizing: border-box;
-    z-index: 999999999;
     padding: 20px 20px 40px 20px;
     background-color: #7e847f;
     display: flex;
@@ -101,10 +102,22 @@
     border-radius: 10px;
     border: 1px solid rgba(246, 246, 246, 0.2);
   }
+
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  .is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    display: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .burger-menu-block {
+  .is-hidden {
+    display: none;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;

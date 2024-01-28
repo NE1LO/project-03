@@ -1,8 +1,4 @@
 @media screen and (min-width: 375px) {
-  .container {
-    max-width: 375px;
-  }
-
   .page-list {
     display: none;
   }
@@ -27,17 +23,22 @@
     letter-spacing: -0.32px;
   }
 
+  .button-burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1c2225;
+    border: none;
+    background-color: transparent;
+  }
+
   .icon-burger {
     width: 32px;
     height: 16px;
+    stroke: #000000;
   }
 }
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-    padding: 0 32px;
-  }
-
   .button-burger {
     display: none;
   }
@@ -83,7 +84,7 @@
 
   .page-link {
     color: #1b1b1b;
-    font-family: 'DM Sans' sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -97,6 +98,7 @@
     display: flex;
     gap: 12px;
     margin-top: 36px;
+    animation: myAnim 1s ease 1 normal forwards;
   }
 
   .sm-list-item {
@@ -115,15 +117,11 @@
   }
   .icon {
     height: 28px;
-    stroke: #7e847f;
+    fill: #7e847f;
+    transition: 0.2s;
   }
 }
 @media screen and (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-    padding: 0 100px;
-  }
-
   .button-burger {
     display: none;
   }
