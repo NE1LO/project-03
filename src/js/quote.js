@@ -41,10 +41,8 @@ if(new Date() !== JSON.parse(localStorage.getItem(STORAGE_KEY)).date){
     )
     .then(text => {
       const obj = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      console.log(obj);
       paragraph.textContent = obj.quote;
       author.textContent = obj.author;
-      console.log(author.textContent = obj.author);
       return;  
     })
     .catch(error => {
