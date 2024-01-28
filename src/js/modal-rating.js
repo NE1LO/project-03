@@ -27,6 +27,8 @@ function handleEscKeyPress(event) {
   }
 }
 
+
+
 closeButton.addEventListener('click', closeModal);
 backdrop.addEventListener('click', handleClickOutsideModal);
 document.addEventListener('keydown', handleEscKeyPress);
