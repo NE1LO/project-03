@@ -112,24 +112,17 @@ const showIziToast = (options) => {
           message:
           'We are excited to have you on board! 🎉 Thank you for subscribing to new exercises on Energy Flow. You have just taken a significant step towards improving your fitness and well-being.'
           });
+            }
       
-      }
-      else if (response.data && response.data.message === "Such email already exists") {
-        showIziToast({
-          message:
-          'Email already exists. Please use a different email address.',
-      });
-      } 
       else {
-        const errorMessage = response.data?.message || 'Subscription failed';
         showIziToast({
-          message: errorMessage,
+          message: 'Subscription failed',
         });            
         }
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error); 
       if (error.response && error.response.status === 409) {
-      
+       
         showIziToast({
           message: 'Email already exists. Please use a different email address.',
         });

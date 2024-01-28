@@ -83,19 +83,5 @@
       ></textarea>
       <button class="modal-rating-btn">Send</button>
     </form>
-  </div>
-  <script>
-    const arrayStars = document.querySelectorAll('.modal-rating-svg-star');
-    const listRadio = document.querySelector('.modal-rating-radio-list');
-    listRadio.addEventListener('click', e => {
-      if (e.target.nodeName === 'INPUT') {
-        arrayStars.forEach(i =>
-          i.classList.remove('modal-rating-svg-star-gold')
-        );
-        for (let i = 0; i < e.target.value; i++) {
-          arrayStars[i].classList.add('modal-rating-svg-star-gold');
-        }
-      }
-    });
-  </script>
+  </div>  
 </div>
