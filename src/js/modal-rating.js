@@ -7,32 +7,39 @@ const backdrop = document.querySelector('.modal-rating-background');
 const closeButton = document.querySelector('.modal-rating-btn-close');
 const ratingButton = document.querySelector('.modal-trane-btn-rating');
 
-export function openModal() {
+export function openModalRating() {
   backdrop.style.display = 'flex';
 }
 
-function closeModal() {
+export function changeModalRating() {
+  if (openModalRating()) {
+    closeModalTraine()
+  }
+  openModalTraine()
+}
+
+function closeModalRating() {
   backdrop.style.display = 'none';
 }
 
 function handleClickOutsideModal(event) {
   if (event.target === backdrop) {
-    closeModal();
+    closeModalRating();
   }
 }
 
 function handleEscKeyPress(event) {
   if (event.key === 'Escape') {
-    closeModal();
+    closeModalRating();
   }
 }
 
-closeButton.addEventListener('click', closeModal);
+closeButton.addEventListener('click', closeModalRating);
 backdrop.addEventListener('click', handleClickOutsideModal);
 document.addEventListener('keydown', handleEscKeyPress);
 
 function removeEventListeners() {
-  closeButton.removeEventListener('click', closeModal);
+  closeButton.removeEventListener('click', closeModalRating);
   backdrop.removeEventListener('click', handleClickOutsideModal);
   document.removeEventListener('keydown', handleEscKeyPress);
 }
