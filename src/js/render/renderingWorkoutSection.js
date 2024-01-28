@@ -13,9 +13,7 @@ const limit = parseInt(bodyWidth) < 768 ? 8 : 9;
 const paramsObj = {
   page: 1,
   limit,
-  bodypart: 'back',
   muscles: 'lats',
-  keyword: 'pull',
 };
 
 // equipment: 'barbell',
