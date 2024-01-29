@@ -44,11 +44,13 @@
   align-items: center;
 }
 
-.workout-card__button-workout {
+.workout-card__text-workout {
   width: 76px;
   height: 26px;
   background-color: #7e847f;
   border-radius: 15px;
+  text-align: center;
+  line-height: normal;
 
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
@@ -170,6 +172,10 @@
   color: rgb(27, 27, 27, 0.4);
 }
 
+:disabled {
+  cursor: default;
+}
+
 /* .is-active-page {
   font-size: 24px;
   color: #1b1b1b;
@@ -178,8 +184,4 @@
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid #1b1b1b;
   border-radius: 50px;
-}
-
-:disabled {
-  cursor: default;
 } */
