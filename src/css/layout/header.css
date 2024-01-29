@@ -67,7 +67,7 @@
     margin-top: 32px;
   }
 
-  .page-list-item-home {
+  .active {
     display: flex;
     padding: 6px 26px;
     border-radius: 30px;
@@ -75,11 +75,12 @@
     background-color: #ffff;
   }
 
-  .page-list-item-fav {
+  .page-list-item-disable {
     display: flex;
     padding: 6px;
     border-radius: 30px;
     justify-content: center;
+    align-items: center;
   }
 
   .page-link {
