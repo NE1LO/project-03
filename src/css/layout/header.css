@@ -1,43 +1,42 @@
-@media screen and (min-width: 375px) {
-  .page-list {
-    display: none;
-  }
-
-  .sm-list {
-    display: none;
-  }
-
-  .header-nav {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-
-  .logo-link {
-    color: #1b1b1b;
-    font-family: 'DM Sans';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 18px; /* 112.5% */
-    letter-spacing: -0.32px;
-  }
-
-  .button-burger {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #1c2225;
-    border: none;
-    background-color: transparent;
-  }
-
-  .icon-burger {
-    width: 32px;
-    height: 16px;
-    stroke: #000000;
-  }
+.page-list {
+  display: none;
 }
+
+.sm-list {
+  display: none;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.logo-link {
+  color: #1b1b1b;
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; /* 112.5% */
+  letter-spacing: -0.32px;
+}
+
+.button-burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1c2225;
+  border: none;
+  background-color: transparent;
+}
+
+.icon-burger {
+  width: 32px;
+  height: 16px;
+  stroke: #000000;
+}
+
 @media screen and (min-width: 768px) {
   .button-burger {
     display: none;

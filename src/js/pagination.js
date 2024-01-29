@@ -12,6 +12,7 @@ const limit = parseInt(bodyWidth) < 768 ? 8 : 12;
 const params = {
   limit,
   page: 1,
+  filter: 'Muscles',
 };
 
 const filterGroup = e => {
