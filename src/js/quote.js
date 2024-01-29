@@ -1,47 +1,34 @@
-const paragraph = document.querySelector('.hero-third-container-text');
-const author = document.querySelector('.hero-third-container-author');
-const STORAGE_KEY = 'backend-feedback';
+import { allApi } from './requests';
 
-/*
-блок з цитатою дня містить: 
-    цитату, яку треба отримувати з бекенду і зберігати в локалсторідж разом із датою, 
-    яку в подальшому слід перевіряти - і якщо дата не змінилась - не робити запит на бекенд 
-    зображеннння, яке слід реалузувати, як фонове. 
-*/
+const quoteText = document.querySelector('.hero-third-container-text');
+const quoteAuthor = document.querySelector('.hero-third-container-author');
+const KEY_QUOTE = 'key-quote';
 
-/* отримуємо цитату з бекенду*/
+const newQuote = async () => {
+  if (
+    JSON.parse(localStorage.getItem(KEY_QUOTE)).date !==
+    `${new Date().getDate()}:${
+      new Date().getMonth() + 1
+    }:${new Date().getFullYear()}`
+  ) {
+    const response = await allApi.getQuote();
+    const DATA = {
+      author: response.data.author,
+      quote: response.data.quote,
+      date: `${new Date().getDate()}:${
+        new Date().getMonth() + 1
+      }:${new Date().getFullYear()}`,
+    };
+    localStorage.setItem(KEY_QUOTE, JSON.stringify(DATA));
+    quoteText.textContent = DATA.quote;
+    quoteAuthor.textContent = DATA.author;
+    console.log(1);
+  } else {
+    const DATA = JSON.parse(localStorage.getItem(KEY_QUOTE));
+    quoteText.textContent = DATA.quote;
+    quoteAuthor.textContent = DATA.author;
+    console.log(DATA);
+  }
+};
 
-const url = 'https://energyflow.b.goit.study/api/quote';
-
-if (new Date() !== JSON.parse(localStorage.getItem(STORAGE_KEY)).date) {
-  fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Request is not ok');
-      }
-
-      return response.json();
-    })
-
-    .then(text => {
-      let dateTime = new Date();
-      let arrInfSet = {
-        quote: text.quote,
-        author: text.author,
-        date: dateTime,
-      };
-      localStorage.setItem('backend-feedback', JSON.stringify(arrInfSet));
-      return;
-    })
-    .then(text => {
-      const obj = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      console.log(obj);
-      paragraph.textContent = obj.quote;
-      author.textContent = obj.author;
-      console.log((author.textContent = obj.author));
-      return;
-    })
-    .catch(error => {
-      console.log(error);
-    });
-}
+export { newQuote };

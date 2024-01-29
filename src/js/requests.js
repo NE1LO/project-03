@@ -17,4 +17,13 @@ const getWorkout = async object => {
   }
 };
 
-export const allApi = { getFilters, getWorkout };
+const getQuote = async () => {
+  try {
+    const response = await apiInstance.get('quote');
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const allApi = { getFilters, getWorkout, getQuote };
