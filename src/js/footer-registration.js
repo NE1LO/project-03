@@ -10,7 +10,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 // ===================================================================================
 
-const form = document.querySelector('.form');
 const footerInput = document.querySelector('.footer-input');
 
 const showIziToast = options => {
@@ -24,7 +23,7 @@ const showIziToast = options => {
   });
 };
 
-form.addEventListener('submit', async function (event) {
+export const sendEmail = async event => {
   event.preventDefault();
 
   const email = event.target.email.value;
@@ -69,4 +68,4 @@ form.addEventListener('submit', async function (event) {
       }
     }
   }
-});
+};
