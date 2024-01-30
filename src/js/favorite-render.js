@@ -1,19 +1,17 @@
 import { apiInstance } from './services/api';
-
-const key = 'key';
+import { btnRender } from '../js/btnRender';
+import { hidesElementFromPage } from './elementManagement';
 
 const container = document.querySelector('.favorites-exercise-container');
+const btnPagination = document.querySelector('.render-btn-list-pagination');
 
-let localStorageData;
+const key = 'key';
+let localStorageData = null;
 
-const parseLocalStorage = () => {
-  try {
-    localStorageData = JSON.parse(localStorage.getItem(key));
-  } catch (e) {
-    console.log(e);
-  }
-  return localStorageData;
-};
+const bodyWidth = getComputedStyle(document.querySelector('body')).width;
+const limit = parseInt(bodyWidth) < 768 ? 8 : 9;
+let currentPage = 1;
+const itemsPerPage = 8;
 
 const getId = async idValue => {
   try {
@@ -22,6 +20,15 @@ const getId = async idValue => {
   } catch (e) {
     console.log(e);
   }
+};
+
+const parseLocalStorage = () => {
+  try {
+    localStorageData = JSON.parse(localStorage.getItem(key));
+  } catch (e) {
+    console.log(e);
+  }
+  return localStorageData;
 };
 
 const ifLocalStorageClean = () => {
@@ -39,6 +46,7 @@ const ifLocalStorageClean = () => {
         </h3>
       </div>`;
   container.insertAdjacentHTML('beforeend', markupNotFound);
+  hidesElementFromPage(btnPagination);
 };
 
 const ifLocalStorageIs = result => {
@@ -81,7 +89,7 @@ const ifLocalStorageIs = result => {
                   href="./img/symbol-defs.svg#icon-icon"
                 ></use>
               </svg>
-              ${name}
+              ${name[0].toUpperCase() + name.slice(1)}
             </h3>
 
             <ul class="workout-card__statistic_list">
@@ -114,15 +122,14 @@ const ifLocalStorageIs = result => {
 async function checkLocalStorage() {
   parseLocalStorage();
 
-  if (
-    localStorageData !== undefined &&
-    localStorageData !== null &&
-    localStorageData.length !== 0
-  ) {
+  if (localStorageData !== null && limit === 8 && localStorageData.length > 8) {
+    getDataForPage(currentPage);
+  } else if (localStorageData !== null && localStorageData.length !== 0) {
     const result = await Promise.all(
       localStorageData.map(idValue => getId(idValue))
     );
     ifLocalStorageIs(result);
+    hidesElementFromPage(btnPagination);
   } else {
     ifLocalStorageClean();
   }
@@ -143,7 +150,6 @@ const deleteCard = e => {
     const newLocalStorage = localStorageData.filter(
       id => id !== currentElementId
     );
-    console.log(localStorageData);
     localStorage.setItem(key, JSON.stringify(newLocalStorage));
     checkLocalStorage();
   }
@@ -151,12 +157,20 @@ const deleteCard = e => {
 
 container.addEventListener('click', deleteCard);
 
-const str = JSON.stringify([
-  '64f389465ae26083f39b17a4',
-  '64f389465ae26083f39b17a5',
-  '64f389465ae26083f39b17a6',
+async function getDataForPage(pageNumber) {
+  const totalPages = Math.ceil(localStorageData.length / itemsPerPage);
 
-  '64f389465ae26083f39b17a8',
-  '64f389465ae26083f39b17a7',
-]);
-console.log(str);
+  btnRender(totalPages, pageNumber);
+
+  const startIndex = (pageNumber - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const idForPage = localStorageData.slice(startIndex, endIndex);
+
+  const pageData = await Promise.all(idForPage.map(id => getId(id)));
+  ifLocalStorageIs(pageData);
+}
+
+btnPagination.addEventListener('click', e => {
+  currentPage = Number(e.target.innerHTML);
+  checkLocalStorage();
+});

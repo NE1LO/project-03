@@ -1,16 +1,28 @@
-.favorites-exercise-section,
-.favorites-exercise-container {
+.favorites-exercise-section {
   background-color: #e8e8e8;
   border-radius: 30px;
   margin-bottom: 16px;
-  height: 450px;
   opacity: 1;
+}
+.favorites-exercise-container {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  gap: 20px;
 }
 
+.favorites-exercise-container .workout-card__rating-block {
+  border: none;
+  display: flex;
+  margin-left: 5px;
+  background-color: #ffffff;
+  color: #e8e8e8;
+}
 .favorites-exercise-title {
-  color: #000000;
   text-align: start;
+  color: #000000;
   font-weight: 400;
   line-height: 32px;
   font-size: 32px;
@@ -35,25 +47,43 @@
 }
 
 .favorites-exercise-img {
-  opacity: 2;
   width: 85px;
-  padding: 80px 0 28px 0;
+
+  padding: 70px 0 28px 0;
 }
-.workout-card__basket-icon {
-  padding-left: 10px;
-  width: 16px;
-  height: 16px;
-}
+
 .icon-basket {
   fill: #e8e8e8;
   stroke: #000000;
+  cursor: pointer;
 }
 @media screen and (min-width: 768px) {
-  .favorites-exercise-section,
-  .favorites-exercise-container {
+  .favorites-exercise-section {
     height: 928px;
   }
 
+  .favorites-exercise-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4px;
+    gap: 14px;
+    max-height: 720px;
+  }
+
+  .favorites-exercise-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  .favorites-exercise-container::-webkit-scrollbar-thumb {
+    background-color: #7e847f;
+    border-radius: 10px;
+  }
+  .favorites-exercise-container::-webkit-scrollbar-track {
+    background-color: #d4d4d4;
+    border-radius: 10px;
+  }
   .favorites-exercise-title {
     font-size: 44px;
     line-height: 48px;
@@ -63,21 +93,24 @@
   .favorites-exercise-not-found {
     font-size: 18px;
     line-height: 24px;
+
     padding: 0 91px 0 91px;
   }
 
   .favorites-exercise-img {
     width: 115px;
+
     padding-top: 200px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .favorites-exercise-section,
-  .favorites-exercise-container {
+  .favorites-exercise-section {
     height: 687px;
   }
-
+  .favorites-exercise-container {
+    max-height: 480px;
+  }
   .favorites-exercise-not-found {
     padding: 0 437px 0 427px;
   }
