@@ -4,12 +4,15 @@ const quoteText = document.querySelector('.hero-third-container-text');
 const quoteAuthor = document.querySelector('.hero-third-container-author');
 const KEY_QUOTE = 'key-quote';
 
-const newQuote = async () => {
+export const newQuote = async () => {
+  const data = await JSON.parse(localStorage.getItem(KEY_QUOTE));
+
   if (
-    JSON.parse(localStorage.getItem(KEY_QUOTE)).date !==
-    `${new Date().getDate()}:${
-      new Date().getMonth() + 1
-    }:${new Date().getFullYear()}`
+    data.date !==
+      `${new Date().getDate()}:${
+        new Date().getMonth() + 1
+      }:${new Date().getFullYear()}` ||
+    !JSON.parse(localStorage.getItem(KEY_QUOTE)).date
   ) {
     const response = await allApi.getQuote();
     const DATA = {
@@ -30,5 +33,3 @@ const newQuote = async () => {
     console.log(DATA);
   }
 };
-
-export { newQuote };
