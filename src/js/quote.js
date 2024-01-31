@@ -1,5 +1,6 @@
 "use strict";
 
+
 const paragraph = document.querySelector('.hero-third-container-text');
 const author = document.querySelector('.hero-third-container-author');
 const STORAGE_KEY = 'backend-feedback';
@@ -43,6 +44,10 @@ if(new Date() !== JSON.parse(localStorage.getItem(STORAGE_KEY)).date){
       const obj = JSON.parse(localStorage.getItem(STORAGE_KEY));
       paragraph.textContent = obj.quote;
       author.textContent = obj.author;
+<<<<<<< Updated upstream
+=======
+      console.log(author.textContent = obj.author);
+>>>>>>> Stashed changes
       return;  
     })
     .catch(error => {
@@ -50,3 +55,45 @@ if(new Date() !== JSON.parse(localStorage.getItem(STORAGE_KEY)).date){
     }); 
 };
 
+/* 
+const url = 'https://energyflow.b.goit.study/api/quote'; 
+console.log(url);
+
+if(new Date() !== JSON.parse(localStorage.getItem(STORAGE_KEY)).date){
+    axios.get(url)
+    .then(response => {
+   
+      if (!response.status) {
+        throw new Error('Request is not ok');
+      }
+
+      return response.json();
+    })
+
+    .then(text => {
+    let dateTime = new Date();
+    let arrInfSet = {
+        quote: text.quote,
+        author: text.author,
+        date: dateTime,
+    }  
+    localStorage.setItem('backend-feedback', JSON.stringify(arrInfSet));
+        return;
+      }   
+    )
+    .then(text => {
+      const obj = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      paragraph.textContent = obj.quote;
+      author.textContent = obj.author;
+<<<<<<< Updated upstream
+=======
+      console.log(author.textContent = obj.author);
+>>>>>>> Stashed changes
+      return;  
+    })
+    .catch(error => {
+        console.log(error);
+    }); 
+};
+
+*/
