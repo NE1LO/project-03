@@ -20,6 +20,7 @@
   letter-spacing: 0.02em;
   text-align: start;
   margin-bottom: 20px;
+  pointer-events: none;
 }
 .render-page-one-list-btn-search {
   display: flex;
@@ -75,6 +76,7 @@
 .render-page-one-item > img {
   width: 295px;
   height: 232px;
+  pointer-events: none;
 }
 .render-page-one-img-container {
   background-image: linear-gradient(
@@ -93,6 +95,7 @@
   top: 0;
   left: 0;
   border-radius: 12px;
+  pointer-events: none;
 }
 .render-page-one-item-title {
   color: #f6f6f6;
@@ -104,6 +107,7 @@
   color: rgba(246, 246, 246, 0.4);
   font-size: 12px;
   line-height: 18px;
+  pointer-events: none;
 }
 .render-btn-list-pagination {
   display: flex;
