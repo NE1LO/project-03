@@ -19,7 +19,7 @@
     <script type="module" crossorigin src="/project-03/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/project-03/assets/vendor-0a7943b3.js">
     <link rel="stylesheet" href="/project-03/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/project-03/assets/style-b4b587e2.css">
+    <link rel="stylesheet" href="/project-03/assets/style-e1657357.css">
   </head>
   <body>
     <!-- <div class="burger-menu-block is-hidden no-scroll">
@@ -146,8 +146,10 @@
     <svg class="hero-third-container-quotesSvg">
       <use href="../img/symbol-defs.svg#icon-inverted-commas"></use>
     </svg>
-    <p class="hero-third-container-text"></p>
-    <p class="hero-third-container-author"></p>
+    <div style="display: flex; align-items: center; flex-direction: column">
+      <p class="hero-third-container-text"></p>
+      <p class="hero-third-container-author"></p>
+    </div>
   </div>
 
   <div class="hero-fourth-container"></div>
@@ -155,7 +157,11 @@
 
     <section class="render-page-one">
   <div class="container render-page-block">
-    <h2 class="render-page-one-title">Exercises</h2>
+    <h2 class="render-page-one-title">
+      Exercises
+      <span class="render-page-one-slesh" style="display: none">/</span
+      ><span class="render-page-one-title-part"> </span>
+    </h2>
     <div class="render-page-one-list-btn-search">
       <ul class="render-page-one-list-btn">
         <li class="render-page-one-filter-list">
@@ -175,8 +181,7 @@
             placeholder="Search"
           />
         </label>
-
-        <button type="button" class="form-search__button">
+        <button type="submit" class="form-search__button">
           <svg class="form-search__icon">
             <use href="/project-03/assets/symbol-defs-092448a0.svg#icon-search"></use>
           </svg>
@@ -302,6 +307,96 @@
         </div>
     </div>
 </footer>
+    <div class="modal-trane-background"></div>
+
+    <div class="modal-rating-background">
+  <div class="modal-rating">
+    <button class="modal-rating-btn-close" type="button">
+      <svg class="modal-rating-svg-close" height="24" width="24">
+        <use href="/project-03/assets/symbol-defs-092448a0.svg#icon-x"></use>
+      </svg>
+    </button>
+    <form class="modal-rating-form">
+      <p class="modal-rating-title">Rating</p>
+      <ul class="modal-rating-radio-list">
+        <li><p class="modal-rating-rating">0.0</p></li>
+        <li>
+          <label
+            ><input
+              class="modal-rating-radio"
+              value="1"
+              type="radio"
+              name="radiostar" /><span>
+              <svg class="modal-rating-svg-star" height="24" width="24">
+                <use href="/project-03/assets/symbol-defs-092448a0.svg#icon-star"></use>
+              </svg> </span
+          ></label>
+        </li>
+        <li>
+          <label
+            ><input
+              class="modal-rating-radio"
+              value="2"
+              type="radio"
+              name="radiostar" /><span>
+              <svg class="modal-rating-svg-star" height="24" width="24">
+                <use href="/project-03/assets/symbol-defs-092448a0.svg#icon-star"></use>
+              </svg> </span
+          ></label>
+        </li>
+        <li>
+          <label
+            ><input
+              class="modal-rating-radio"
+              value="3"
+              type="radio"
+              name="radiostar" /><span>
+              <svg class="modal-rating-svg-star" height="24" width="24">
+                <use href="/project-03/assets/symbol-defs-092448a0.svg#icon-star"></use>
+              </svg> </span
+          ></label>
+        </li>
+        <li>
+          <label
+            ><input
+              class="modal-rating-radio"
+              value="4"
+              type="radio"
+              name="radiostar" /><span>
+              <svg class="modal-rating-svg-star" height="24" width="24">
+                <use href="/project-03/assets/symbol-defs-092448a0.svg#icon-star"></use>
+              </svg> </span
+          ></label>
+        </li>
+        <li>
+          <label
+            ><input
+              class="modal-rating-radio"
+              value="5"
+              type="radio"
+              name="radiostar" /><span>
+              <svg class="modal-rating-svg-star" height="24" width="24">
+                <use href="/project-03/assets/symbol-defs-092448a0.svg#icon-star"></use>
+              </svg> </span
+          ></label>
+        </li>
+      </ul>
+      <input
+        class="modal-rating-email"
+        placeholder="Email"
+        name="email"
+        type="email"
+      />
+      <textarea
+        class="modal-rating-comment"
+        name=""
+        placeholder="Your comment"
+      ></textarea>
+      <button class="modal-rating-btn">Send</button>
+    </form>
+  </div>  
+</div>
+
 
     
   </body>
