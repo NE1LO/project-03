@@ -5,7 +5,7 @@ export const btnRender = (totalPage, page) => {
   for (let i = 1; i <= totalPage; i++) {
     let btn = ` <li>
         <button
-          class="render-pagination-btn "
+          class="render-pagination-btn"
           type="button"
         >${i}</button></li>`;
     markup += btn;

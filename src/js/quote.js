@@ -1,7 +1,11 @@
 import { allApi } from './requests';
 
-const quoteText = document.querySelector('.hero-third-container-text');
-const quoteAuthor = document.querySelector('.hero-third-container-author');
+const quoteText =
+  document.querySelector('.hero-third-container-text') ||
+  document.querySelector('.favorite-quote__text');
+const quoteAuthor =
+  document.querySelector('.hero-third-container-author') ||
+  document.querySelector('.favorite-quote__autor');
 const KEY_QUOTE = 'key-quote';
 
 export const newQuote = async () => {

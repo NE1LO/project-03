@@ -10,5 +10,4 @@ form.addEventListener('submit', sendEmail);
 import './js/modal-trane';
 // import './js/mobile.menu';
 import './js/searchExercises';
-import { addSubtitle } from './js/subtitleExerSection';
 newQuote();
