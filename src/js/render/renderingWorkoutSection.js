@@ -9,18 +9,14 @@ const listPagesRef = document.querySelector('.render-btn-list-pagination');
 export const loadsWorkoutSectionElements = async params => {
   try {
     const response = await allApi.getWorkout(params);
-
-    console.log(response.data.totalPagesS);
-
     listWorkoutRef.innerHTML = createsStringOfWorkoutCardElements(
-      response.data.results
+      response.data.results,
+      params
     );
 
     if (response.data.totalPages === 1) {
       hidesElementFromPage(listPagesRef);
     }
-
-    console.log(response.data.totalPagesS);
 
     btnRender(response.data.totalPages, response.data.page);
   } catch (error) {

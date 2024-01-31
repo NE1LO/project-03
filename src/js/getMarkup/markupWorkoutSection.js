@@ -1,7 +1,15 @@
-export function createsStringOfWorkoutCardElements(arrayOfObjects) {
+const checkFilter = obg => {
+  if (obg.muscles) return ['muscles', obg.muscles];
+  if (obg.bodypart) return ['bodypart', obg.bodypart];
+  if (obg.equipment) return ['equipment', obg.equipment];
+};
+
+export function createsStringOfWorkoutCardElements(arrayOfObjects, params) {
   return arrayOfObjects
     .map(({ _id, bodyPart, name, target, rating, burnedCalories, time }) => {
-      return `<li class="workout-card__item">
+      return `<li class="workout-card__item" data-filter="${
+        checkFilter(params)[0]
+      }" data-name="${checkFilter(params)[1]}" >
 	<div class="workout-card__block">
 		<div class="workout-card__block-top">
 			<div class="workout-card__block_button-rating">
@@ -16,13 +24,12 @@ export function createsStringOfWorkoutCardElements(arrayOfObjects) {
 				</svg>
 				<!-- </div> -->
 			</div>
-
-			<a href="#" class="workout-card__link-start" data-id="${_id}">
+			<button type="button" class="workout-card__link-start" data-id="${_id}">
 				Start
-				<svg class="workout-card__link-icon">
-					<use class="icon-arrow" href="./img/symbol-defs.svg#icon-arrow-right"></use>
+				<svg class="workout-card__link-icon" width="16" height="16">
+					<use class="icon-arrow" href="./img/symbol-defs.svg#icon-arrow"></use>
 				</svg>
-			</a>
+			</button>
 		</div>
 
 		<h3 class="workout-card__title">

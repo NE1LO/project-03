@@ -1,4 +1,4 @@
-const createStarsMarkup = int => {
+export const createStarsMarkup = int => {
   const starsMarkup = [
     './img/symbol-defs.svg#icon-star',
     './img/symbol-defs.svg#icon-star',
@@ -22,5 +22,3 @@ const createStarsMarkup = int => {
     );
   }, '');
 };
-const list = document.querySelector('.modal-trane-list-stars');
-list.innerHTML = createStarsMarkup(4);
