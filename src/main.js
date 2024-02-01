@@ -13,4 +13,4 @@ import './js/mobile.menu';
 import './js/searchExercises';
 
 newQuote();
-// import './js/change-theme';
+import './js/change-theme';
