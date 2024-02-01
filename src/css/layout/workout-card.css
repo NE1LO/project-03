@@ -6,6 +6,7 @@
 }
 .workout-card__button-workout {
   border: none;
+  padding: 4px;
   border-radius: 15px;
   background: #7e847f;
   color: #f6f6f6;
