@@ -1,10 +1,24 @@
-import iziToast from 'izitoast';
 import { createStarsMarkup } from './getMarkup/createStarsMarkup';
 import { openModalRating } from './modal-rating';
 import { apiInstance } from './services/api';
-
+const list = document.querySelector('.favorites-exercise-container');
 const modal = document.querySelector('.modal-trane-background');
-const openModallist = document.querySelector('.render-page-one-list');
+
+const closeModal = () => {
+  modal.classList.remove('modal-trane-background-active');
+  document.removeEventListener('click', closeModalOutside);
+  document.removeEventListener('keydown', closeModalOnEscape);
+};
+const closeModalOutside = event => {
+  if (event.target === modal) {
+    closeModal();
+  }
+};
+const closeModalOnEscape = event => {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+};
 
 const getElemById = async id => {
   const data = await apiInstance.get(`exercises/${id}`);
@@ -69,55 +83,16 @@ const getElemById = async id => {
   </div>`;
   modal.innerHTML = markup;
   const modalCloseBtn = document.querySelector('.modal-trane-btn-close');
-  const FavoritBtn = document.querySelector('.modal-trane-btn-add-favorites');
-  const btnRanig = document.querySelector('.modal-trane-btn-rating');
   modalCloseBtn.addEventListener('click', closeModal);
-  FavoritBtn.addEventListener('click', () => addToFavorites(id));
+  const btnRanig = document.querySelector('.modal-trane-btn-rating');
   btnRanig.addEventListener('click', openModalRating);
 };
 
-function openModal(event) {
-  if (event.target.classList.contains('workout-card__link-start')) {
-    const itemId = event.target;
-
-    getElemById(itemId.dataset.id);
+list.addEventListener('click', e => {
+  if (e.target.classList.contains('workout-card__link-start')) {
+    getElemById(e.target.dataset.id);
     modal.classList.add('modal-trane-background-active');
     document.addEventListener('click', closeModalOutside);
     document.addEventListener('keydown', closeModalOnEscape);
   }
-}
-function closeModal() {
-  modal.classList.remove('modal-trane-background-active');
-  document.removeEventListener('click', closeModalOutside);
-  document.removeEventListener('keydown', closeModalOnEscape);
-}
-function closeModalOutside(event) {
-  if (event.target === modal) {
-    closeModal();
-  }
-}
-function closeModalOnEscape(event) {
-  if (event.key === 'Escape') {
-    closeModal();
-  }
-}
-
-function addToFavorites(id) {
-  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-  if (!favorites.includes(id)) {
-    favorites.push(id);
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    iziToast.success({
-      message: 'Add favorite!',
-      position: 'topCenter',
-    });
-  } else {
-    iziToast.error({
-      title: 'Error',
-      message: 'Has already',
-      position: 'topCenter',
-    });
-  }
-}
-
-openModallist.addEventListener('click', openModal);
+});

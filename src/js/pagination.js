@@ -11,7 +11,9 @@ const listWorkoutRef = document.querySelector('.render-page-one-list');
 const formSearchRef = document.querySelector('.form-search');
 const slesh = document.querySelector('.render-page-one-slesh');
 const word = document.querySelector('.render-page-one-title-part');
+const btnsPag = document.querySelectorAll('.render-pagination-btn');
 const searchParams = {};
+let page = 0;
 
 listWorkoutRef.addEventListener('click', loadsFirstPageElements);
 
@@ -78,8 +80,10 @@ function loadsNextPageElements(e) {
   if (!e.target.closest('.render-pagination-btn')) return;
 
   paramsObj.page = e.target.textContent;
-
-  loadsWorkoutSectionElements(paramsObj);
+  const numbers = parseInt(e.target.dataset.num);
+  if (page !== e.target.textContent)
+    loadsWorkoutSectionElements(paramsObj, numbers);
+  page = e.target.textContent;
 }
 
 function clearsElementsObj(obj) {

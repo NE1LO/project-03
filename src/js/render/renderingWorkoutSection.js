@@ -6,7 +6,7 @@ import { btnRender } from '../btnRender';
 const listWorkoutRef = document.querySelector('.render-page-one-list');
 const listPagesRef = document.querySelector('.render-btn-list-pagination');
 
-export const loadsWorkoutSectionElements = async params => {
+export const loadsWorkoutSectionElements = async (params, numbers) => {
   try {
     const response = await allApi.getWorkout(params);
     listWorkoutRef.innerHTML = createsStringOfWorkoutCardElements(
@@ -18,7 +18,7 @@ export const loadsWorkoutSectionElements = async params => {
       hidesElementFromPage(listPagesRef);
     }
 
-    btnRender(response.data.totalPages, response.data.page);
+    btnRender(response.data.totalPages, params.page, numbers);
   } catch (error) {
     console.log(error);
   }
