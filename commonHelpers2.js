@@ -1,4 +1,4 @@
-import{d as x,b as C,i as p,h as F,s as U,a as v,c as N,o as H,n as z}from"./assets/quote-662fa2df.js";import{i as k}from"./assets/vendor-0a7943b3.js";const b=async e=>{const t=i=>{const s=i;if(s==="Muscles")return s.toLowerCase();if(s==="Body parts")return"bodypart";if(s==="Equipment")return s.toLowerCase()},a={...e},n=await x.getFilters(a),r=n.data.results;return C(n.data.totalPages,e.page),r.reduce((i,s)=>i+` <li class="render-page-one-item" data-filter="${t(e.filter)}" data-name="${s.name}">
+import{d as x,b as C,i as p,h as F,s as U,a as v,c as N,o as H,n as z}from"./assets/quote-c30b155e.js";import{i as k}from"./assets/vendor-0a7943b3.js";const b=async e=>{const t=i=>{const s=i;if(s==="Muscles")return s.toLowerCase();if(s==="Body parts")return"bodypart";if(s==="Equipment")return s.toLowerCase()},a={...e},n=await x.getFilters(a),r=n.data.results;return C(n.data.totalPages,e.page),r.reduce((i,s)=>i+` <li class="render-page-one-item" data-filter="${t(e.filter)}" data-name="${s.name}">
             <img src="${s.imgUrl}" alt="" />
             <div class="render-page-one-img-container">
               <p class="render-page-one-item-title">${s.name}</p>
