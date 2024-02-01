@@ -86,7 +86,7 @@ const ifLocalStorageIs = result => {
               <svg class="workout-card__title-icon">
                 <use
                   class="icon-icon"
-                  href="./img/symbol-defs.svg#icon-icon"
+                  href="../img/symbol-defs.svg#icon-icon"
                 ></use>
               </svg>
               ${name[0].toUpperCase() + name.slice(1)}

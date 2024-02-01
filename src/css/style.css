@@ -15,3 +15,8 @@
 @import url(./layout/footer.css);
 @import url(./layout/workout-card.css);
 /* @import url(./layout/important-minutes.css); */
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format('woff2'),
+    url('../DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format('woff');
+}
