@@ -1,0 +1,190 @@
+/* ==================== HOME ====================*/
+
+body {
+    background-color: rgb(7, 1, 61);
+}
+
+.logo-link {
+    
+    color: #F6F6F6;
+}
+  
+ .hero-first-container {
+     background-image: url(/img/black-theme-img/hero-img-mobile.png);
+ }
+
+.hero-second-container {
+    background-color: rgb(11, 2, 83);
+}
+
+.hero-second-container-title {
+    color: #F6F6F6;
+}
+
+.hero-second-container-text {
+    color: rgba(246, 246, 246, 0.60);
+}
+
+.hero-third-container {
+    background-color: rgb(11, 2, 83);
+}
+
+.hero-fourth-container {
+    background-image: url(/img/black-theme-img/second-img-mobile.png);
+}
+
+.render-page-one {
+    background-color: rgb(11, 2, 83);
+}
+
+.render-page-one-title {
+    color: #F6F6F6;
+}
+
+.important-container {
+    background-color: rgb(11, 2, 83);
+}
+
+.important-img {
+    background-image: url(/img/black-theme-img/important-img-mobile.png);
+}
+
+.workout-card__block {
+    background-color: rgb(15, 3, 104);
+}
+
+.workout-card__rating-text {
+    color: #F6F6F6;
+}
+
+.workout-card__title {
+    color: #F6F6F6;
+}
+
+.workout-card__link-start {
+    color: #F6F6F6;
+    stroke: #F6F6F6;
+}
+.icon-arrow {
+    stroke: #F6F6F6;
+}
+
+.secondary-color-text {
+    color: #F6F6F6;
+}
+.workout-card__statistic_text {
+    color: #F6F6F6;
+}
+
+.render-pagination-btn {
+color: #F6F6F6;
+fill: #F6F6F6;
+}
+
+.render-pagination-btn-active {
+    color: #F6F6F6;
+    border: 1px solid #F6F6F6;
+}
+
+.modal-trane {
+    background-color: rgb(11, 2, 83);
+}
+.modal-trane-title {
+    color: #F6F6F6;
+}
+.modal-trane-ratind {
+    color: #F6F6F6;
+}
+
+.modal-trane-title-information{
+    color: #F6F6F6;
+}
+.modal-trane-information-text{
+    color: #F6F6F6;
+}
+.modal-trane-btn-rating {
+    color: #F6F6F6;
+    border: 1px solid #F6F6F6;
+}
+.modal-rating {
+    background-color: rgb(11, 2, 83);
+}
+.modal-rating-title{
+    color: #F6F6F6;
+}
+
+.modal-rating-rating{
+    color: #F6F6F6;
+}
+.modal-rating-email {
+    border: 1px solid #F6F6F6;
+}
+.modal-rating-comment{
+    border: 1px solid #F6F6F6;
+}
+
+.modal-trane-btn-close {
+    fill: #F6F6F6;
+}
+.render-page-one-title-part{
+    color: #F6F6F6;
+}
+
+.render-page-one-no {
+    color: #F6F6F6;
+}
+/* ==================== /HOME ====================*/
+
+@media screen and (min-width: 768px) {
+    .hero-first-container {
+        background-image: url(/img/black-theme-img/hero-img-tablet.png);
+    }
+
+        .hero-fourth-container {
+            background-image: url(/img/black-theme-img/second-img-tablet.png);
+        }
+   .important-img {
+       background-image: url(/img/black-theme-img/important-img-tablet.png);
+   }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .hero-first-container {
+        background-image: url(/img/black-theme-img/hero-img-desktop.png);
+    }
+
+}
+
+/* ==================== FAVORITE ====================*/
+
+.favorite-quote__container {
+    background-color: rgb(11, 2, 83);
+}
+
+.collection-img-new {
+    background-image: url(/img/black-theme-img/favorite-img-desktop.png);
+}
+
+.favorite__white-card {
+    background-color: rgb(11, 2, 83);
+}
+
+.white-card__headline {
+    color: #F6F6F6;
+}
+
+.white-card__text {
+    color: #F6F6F6;
+}
+
+.white-card__svg {
+    fill:#F6F6F6;
+}
+
+/* @media screen and (min-width: 1440px) {
+    .collection-img {
+        background-image: url(/img/black-theme-img/favorite-img-desktop.png);
+    }
+
+} */
