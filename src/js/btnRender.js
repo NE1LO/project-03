@@ -2,7 +2,14 @@ const listBtn = document.querySelector('.render-btn-list-pagination');
 
 export const btnRender = (totalPage, page, numbers) => {
   let markup = '';
-
+  if (totalPage === 1) {
+    listBtn.innerHTML = ` <li>
+        <button 
+          class="render-pagination-btn render-pagination-btn-active"
+          type="button"
+        >1</button></li>`;
+    return;
+  }
   let light = totalPage < 2 ? totalPage : 3;
   for (let i = 0; i < light; i++) {
     let ind = page;
