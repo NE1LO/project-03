@@ -1,3 +1,4 @@
+import iziToast from 'izitoast';
 import { createStarsMarkup } from './getMarkup/createStarsMarkup';
 import { openModalRating } from './modal-rating';
 import { apiInstance } from './services/api';
@@ -8,7 +9,6 @@ const openModallist = document.querySelector('.render-page-one-list');
 const getElemById = async id => {
   const data = await apiInstance.get(`exercises/${id}`);
   const response = data.data;
-
   const markup = `<div class="modal-trane">
     <button class="modal-trane-btn-close" type="button">
       <svg height="28" width="28" style="stroke: black">
@@ -43,7 +43,7 @@ const getElemById = async id => {
         </li>
         <li>
           <p class="modal-trane-title-information">Popular</p>
-          <p class="modal-trane-information-text">${response.popular}</p>
+          <p class="modal-trane-information-text">${response.popularity}</p>
         </li>
         <li>
           <p class="modal-trane-title-information">Burned calories</p>
@@ -72,7 +72,7 @@ const getElemById = async id => {
   const FavoritBtn = document.querySelector('.modal-trane-btn-add-favorites');
   const btnRanig = document.querySelector('.modal-trane-btn-rating');
   modalCloseBtn.addEventListener('click', closeModal);
-  FavoritBtn.addEventListener('click', addToFavorites);
+  FavoritBtn.addEventListener('click', () => addToFavorites(id));
   btnRanig.addEventListener('click', openModalRating);
 };
 
@@ -102,11 +102,21 @@ function closeModalOnEscape(event) {
   }
 }
 
-function addToFavorites() {
+function addToFavorites(id) {
   let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-  if (!favorites.includes(itemId.dataset.id)) {
-    favorites.push(itemId.dataset.id);
+  if (!favorites.includes(id)) {
+    favorites.push(id);
     localStorage.setItem('favorites', JSON.stringify(favorites));
+    iziToast.success({
+      message: 'Add favorite!',
+      position: 'topCenter',
+    });
+  } else {
+    iziToast.error({
+      title: 'Error',
+      message: 'Has already',
+      position: 'topCenter',
+    });
   }
 }
 

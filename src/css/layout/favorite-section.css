@@ -140,6 +140,7 @@
   }
   .favorite-quote__container {
     width: 704px;
+    min-height: 270px;
   }
   .favorite__white-card {
     max-width: 352px;

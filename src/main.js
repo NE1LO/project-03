@@ -8,7 +8,13 @@ import { sendEmail } from './js/footer-registration';
 const form = document.querySelector('.form');
 form.addEventListener('submit', sendEmail);
 import './js/modal-trane';
+// import './js/favorite-render';
+
 // import './js/mobile.menu';
 import './js/searchExercises';
+change-theme
 import { addSubtitle } from './js/subtitleExerSection';
 newQuote();
+
+// newQuote();
+

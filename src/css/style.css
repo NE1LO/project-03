@@ -14,6 +14,17 @@
 @import url(./layout/important-minutes.css);
 @import url(./layout/footer.css);
 @import url(./layout/workout-card.css);
+@import url(./layout/favorite-exercise.css);
+@import url(./layout/form-search.css);
 /* @import url(./layout/important-minutes.css); */
 
+
 @import url(./layout/change-theme.css);
+
+
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format('woff2'),
+    url('../DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format('woff');
+}

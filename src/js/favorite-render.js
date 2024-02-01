@@ -5,7 +5,7 @@ import { hidesElementFromPage } from './elementManagement';
 const container = document.querySelector('.favorites-exercise-container');
 const btnPagination = document.querySelector('.render-btn-list-pagination');
 
-const key = 'key';
+const key = 'favorites';
 let localStorageData = null;
 
 const bodyWidth = getComputedStyle(document.querySelector('body')).width;
@@ -71,22 +71,22 @@ const ifLocalStorageIs = result => {
                 </div>
               </div>
 
-              <a href="#" class="workout-card__link-start">
+              <button class="workout-card__link-start" data-id="${id}">
                 Start
-                <svg class="workout-card__link-icon">
+                <svg class="workout-card__link-icon" width="16" height='16'>
                   <use
                     class="icon-arrow"
-                    href="./img/symbol-defs.svg#icon-arrow-right"
+                    href="./img/symbol-defs.svg#icon-arrow"
                   ></use>
                 </svg>
-              </a>
+              </button>
             </div>
 
             <h3 class="workout-card__title">
               <svg class="workout-card__title-icon">
                 <use
                   class="icon-icon"
-                  href="./img/symbol-defs.svg#icon-icon"
+                  href="../img/symbol-defs.svg#icon-icon"
                 ></use>
               </svg>
               ${name[0].toUpperCase() + name.slice(1)}
