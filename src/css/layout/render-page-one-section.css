@@ -133,13 +133,14 @@
   background-color: transparent;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
 }
 .render-pagination-btn-active {
   color: #1b1b1b;
   border-radius: 50%;
   border: 1px solid #1b1b1b;
-  padding: 0px 12px;
+  height: 32px;
+  width: 32px;
   flex-shrink: 0;
 }
 .render-page-one-no {
