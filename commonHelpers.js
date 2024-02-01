@@ -1,7 +1,7 @@
-import{h as p,b as L,a as v,c as S,o as $,n as E}from"./assets/change-theme-038c38be.js";import"./assets/vendor-0a7943b3.js";const i=document.querySelector(".favorites-exercise-container"),u=document.querySelector(".render-btn-list-pagination"),b="favorites";let s=null;const P=getComputedStyle(document.querySelector("body")).width,M=parseInt(P)<768?8:9;let k=1;const d=8,f=async t=>{try{return(await v.get(`/exercises/${t}`)).data}catch(a){console.log(a)}},I=()=>{try{s=JSON.parse(localStorage.getItem(b))}catch(t){console.log(t)}return s},q=()=>{i.innerHTML="";const t=`<div class="favorites-exercise-not-found-container">
+import{h as p,b as L,a as v,c as S,o as $,n as E}from"./assets/change-theme-b254e4a6.js";import"./assets/vendor-0a7943b3.js";const i=document.querySelector(".favorites-exercise-container"),u=document.querySelector(".render-btn-list-pagination"),b="favorites";let s=null;const P=getComputedStyle(document.querySelector("body")).width,M=parseInt(P)<768?8:9;let k=1;const d=8,f=async t=>{try{return(await v.get(`/exercises/${t}`)).data}catch(a){console.log(a)}},I=()=>{try{s=JSON.parse(localStorage.getItem(b))}catch(t){console.log(t)}return s},q=()=>{i.innerHTML="";const t=`<div class="favorites-exercise-not-found-container">
         <img
           class="favorites-exercise-img"
-          src="./img/favorite-exercise/favorite-dumbbell.png"
+          src="././img/favorite-exercise/favorite-dumbbell.png"
           alt="dumbbell"
         />
         <h3 class="favorites-exercise-not-found">
@@ -21,7 +21,7 @@ import{h as p,b as L,a as v,c as S,o as $,n as E}from"./assets/change-theme-038c
                    <svg class="workout-card__basket-icon ${o}">
                     <use
                       class="icon-basket ${o}"
-                      href="./img/symbol-defs.svg#icon-trash"
+                      href="././img/symbol-defs.svg#icon-trash"
                     ></use></svg>
                 </div>
               </div>
@@ -31,7 +31,7 @@ import{h as p,b as L,a as v,c as S,o as $,n as E}from"./assets/change-theme-038c
                 <svg class="workout-card__link-icon" width="16" height='16'>
                   <use
                     class="icon-arrow"
-                    href="./img/symbol-defs.svg#icon-arrow"
+                    href="././img/symbol-defs.svg#icon-arrow"
                   ></use>
                 </svg>
               </button>
@@ -41,7 +41,7 @@ import{h as p,b as L,a as v,c as S,o as $,n as E}from"./assets/change-theme-038c
               <svg class="workout-card__title-icon">
                 <use
                   class="icon-icon"
-                  href="../img/symbol-defs.svg#icon-icon"
+                  href="././img/symbol-defs.svg#icon-icon"
                 ></use>
               </svg>
               ${n[0].toUpperCase()+n.slice(1)}
