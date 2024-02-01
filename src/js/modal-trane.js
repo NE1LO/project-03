@@ -10,7 +10,6 @@ const openModallist = document.querySelector('.render-page-one-list');
 const getElemById = async id => {
   const data = await apiInstance.get(`exercises/${id}`);
   const response = data.data;
-  console.log(response);
   const markup = `<div class="modal-trane">
     <button class="modal-trane-btn-close" type="button">
       <svg height="28" width="28" style="stroke: black">

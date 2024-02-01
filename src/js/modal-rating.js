@@ -2,6 +2,8 @@ import { apiInstance } from './services/api';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+const parStar = document.querySelector('.modal-rating-rating');
+
 const backdrop = document.querySelector('.modal-rating-background');
 const backgroundTrane = document.querySelector('.modal-trane-background');
 const closeButton = document.querySelector('.modal-rating-btn-close');
@@ -45,6 +47,7 @@ const arrayStars = document.querySelectorAll('.modal-rating-svg-star');
 const listRadio = document.querySelector('.modal-rating-radio-list');
 listRadio.addEventListener('click', e => {
   if (e.target.nodeName === 'INPUT') {
+    parStar.textContent = `${e.target.value}.0`;
     arrayStars.forEach(i => i.classList.remove('modal-rating-svg-star-gold'));
     for (let i = 0; i < e.target.value; i++) {
       arrayStars[i].classList.add('modal-rating-svg-star-gold');
