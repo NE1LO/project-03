@@ -146,6 +146,13 @@
 }
 
 @media screen and (min-width: 768px) {
+  .hero {
+    margin-top: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .hero:nth-child(-n + 2) {
     display: flex;
     flex-wrap: wrap;

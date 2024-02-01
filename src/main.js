@@ -9,7 +9,7 @@ const form = document.querySelector('.form');
 form.addEventListener('submit', sendEmail);
 import './js/modal-trane';
 
-// import './js/mobile.menu';
+import './js/mobile.menu';
 import './js/searchExercises';
 
 newQuote();
