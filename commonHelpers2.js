@@ -1,4 +1,4 @@
-import{d as x,b as C,i as m,h as F,s as U,a as v,c as N,o as H,n as z}from"./assets/change-theme-312efdfe.js";import{i as k}from"./assets/vendor-0a7943b3.js";const b=async e=>{const t=i=>{const s=i;if(s==="Muscles")return s.toLowerCase();if(s==="Body parts")return"bodypart";if(s==="Equipment")return s.toLowerCase()},a={...e},n=await x.getFilters(a),r=n.data.results;return C(n.data.totalPages,e.page),r.reduce((i,s)=>i+` <li class="render-page-one-item" data-filter="${t(e.filter)}" data-name="${s.name}">
+import{d as x,b as C,i as p,h as F,s as U,a as v,c as N,o as H,n as z}from"./assets/quote-ca3063cd.js";import{i as k}from"./assets/vendor-0a7943b3.js";const b=async e=>{const t=i=>{const s=i;if(s==="Muscles")return s.toLowerCase();if(s==="Body parts")return"bodypart";if(s==="Equipment")return s.toLowerCase()},a={...e},n=await x.getFilters(a),r=n.data.results;return C(n.data.totalPages,e.page),r.reduce((i,s)=>i+` <li class="render-page-one-item" data-filter="${t(e.filter)}" data-name="${s.name}">
             <img src="${s.imgUrl}" alt="" />
             <div class="render-page-one-img-container">
               <p class="render-page-one-item-title">${s.name}</p>
@@ -12,24 +12,24 @@ import{d as x,b as C,i as m,h as F,s as U,a as v,c as N,o as H,n as z}from"./ass
 				<!-- <div class="workout-card__rating-block"> -->
 				<p class="workout-card__rating-text"> ${i.toFixed(1)} </p>
 				<svg class="workout-card__rating-icon">
-					<use class="icon-star" href="${m}#icon-star-gold"></use>
+					<use class="icon-star" href="${p}#icon-star-gold"></use>
 				</svg>
 				<svg class="workout-card__basket-icon" style="display: none">
-					<use class="icon-basket" href="${m}#icon-trash"></use>
+					<use class="icon-basket" href="${p}#icon-trash"></use>
 				</svg>
 				<!-- </div> -->
 			</div>
 			<button type="button" class="workout-card__link-start" data-id="${a}">
 				Start
-				<svg class="workout-card__link-icon" width="16" height="16">
-					<use class="icon-arrow" href="${m}#icon-arrow"></use>
+				<svg class="workout-card__link-icon" width="16" height="16" style="stroke: #000; fill:#000">
+					<use class="icon-arrow" href="${p}#icon-arrow"></use>
 				</svg>
 			</button>
 		</div>
 
 		<h3 class="workout-card__title">
 			<svg class="workout-card__title-icon">
-				<use class="icon-icon" href="../../img/symbol-defs.svg#icon-icon"></use>
+				<use class="icon-icon" href="${p}#icon-icon"></use>
 			</svg>
 			${r[0].toUpperCase()+r.slice(1)}
 		</h3>
@@ -53,10 +53,10 @@ import{d as x,b as C,i as m,h as F,s as U,a as v,c as N,o as H,n as z}from"./ass
 		</ul>
 
 	</div>
-</li>`).join("")}const j=document.querySelector(".render-page-one-list"),G=document.querySelector(".render-btn-list-pagination"),T=async(e,t)=>{try{const a=await x.getWorkout(e);j.innerHTML=M(a.data.results,e),a.data.totalPages===1&&F(G),C(a.data.totalPages,e.page,t)}catch(a){console.log(a)}},J=document.querySelector(".render-page-one-slesh"),q=document.querySelector(".render-page-one-title-part"),Y=e=>{e=e.split(""),e[0]=e[0].toUpperCase(),e=e.join(""),q.style.display="inline-block",J.style.display="inline-block",q.textContent=e},l=document.querySelector(".render-btn-list-pagination"),Q=document.querySelector(".render-page-one-list-btn"),V=document.querySelectorAll(".render-page-one-btn"),h=document.querySelector(".render-page-one-list"),B=document.querySelector(".form-search"),K=document.querySelector(".render-page-one-slesh"),X=document.querySelector(".render-page-one-title-part");document.querySelectorAll(".render-pagination-btn");let $=0;h.addEventListener("click",_);const P=getComputedStyle(document.querySelector("body")).width,Z=parseInt(P)<768?8:12,p={limit:Z,page:1,filter:"Muscles"},ee=parseInt(P)<768?8:9,o={page:1,limit:ee},te=e=>{e.target.nodeName==="BUTTON"&&(K.style.display="none",X.style.display="none",l.style.display="flex",V.forEach(t=>t.classList.remove("render-page-one-btn-active")),e.target.classList.add("render-page-one-btn-active"),p.filter=e.target.textContent.trimStart().trimEnd(),p.page=1,f(b(p)),F(B),(o.muscles||o.bodypart||o.equipment)&&ae(o),o.page=1,l.removeEventListener("click",I),h.addEventListener("click",_),l.addEventListener("click",w))},w=e=>{p.page=parseInt(e.target.textContent),f(b(p))};l.addEventListener("click",w);Q.addEventListener("click",te);function _(e){e.target.closest(".render-page-one-item")&&(Y(e.target.dataset.name),o[e.target.dataset.filter]=e.target.dataset.name,T(o),U(B),l.addEventListener("click",I),l.removeEventListener("click",w),h.removeEventListener("click",_))}function I(e){if(!e.target.closest(".render-pagination-btn"))return;o.page=e.target.textContent;const t=parseInt(e.target.dataset.num);$!==e.target.textContent&&T(o,t),$=e.target.textContent}function ae(e){delete e.muscles,delete e.bodypart,delete e.equipment}const ne=document.querySelector(".footer-input"),u=e=>{k.show({position:"topRight",messageColor:"#FFFFFF",backgroundColor:"#EF4040",titleSize:"8px",closeOnEscape:!0,...e})},se=async e=>{e.preventDefault();const t=e.target.email.value;if(!t.trim()){u({message:"Email is required."});return}const a={email:t};if(ne.checkValidity())try{const n=await v.post("subscription",a);console.log("Response:",n),n.status===201?u({backgroundColor:"#7e847f",message:"We are excited to have you on board! 🎉 Thank you for subscribing to new exercises on Energy Flow. You have just taken a significant step towards improving your fitness and well-being."}):u({message:"Subscription failed"})}catch(n){console.error("Error:",n),n.response&&n.response.status===409?u({message:"Email already exists. Please use a different email address."}):u({message:"An error occurred while processing your request."})}},y=document.querySelector(".modal-trane-background"),oe=document.querySelector(".render-page-one-list"),re=async e=>{const a=(await v.get(`exercises/${e}`)).data,n=`<div class="modal-trane">
+</li>`).join("")}const j=document.querySelector(".render-page-one-list"),G=document.querySelector(".render-btn-list-pagination"),T=async(e,t)=>{try{const a=await x.getWorkout(e);j.innerHTML=M(a.data.results,e),a.data.totalPages===1&&F(G),C(a.data.totalPages,e.page,t)}catch(a){console.log(a)}},J=document.querySelector(".render-page-one-slesh"),$=document.querySelector(".render-page-one-title-part"),Y=e=>{e=e.split(""),e[0]=e[0].toUpperCase(),e=e.join(""),$.style.display="inline-block",J.style.display="inline-block",$.textContent=e},l=document.querySelector(".render-btn-list-pagination"),Q=document.querySelector(".render-page-one-list-btn"),V=document.querySelectorAll(".render-page-one-btn"),h=document.querySelector(".render-page-one-list"),B=document.querySelector(".form-search"),K=document.querySelector(".render-page-one-slesh"),X=document.querySelector(".render-page-one-title-part");document.querySelectorAll(".render-pagination-btn");let q=0;h.addEventListener("click",_);const P=getComputedStyle(document.querySelector("body")).width,Z=parseInt(P)<768?8:12,m={limit:Z,page:1,filter:"Muscles"},ee=parseInt(P)<768?8:9,o={page:1,limit:ee},te=e=>{e.target.nodeName==="BUTTON"&&(K.style.display="none",X.style.display="none",l.style.display="flex",V.forEach(t=>t.classList.remove("render-page-one-btn-active")),e.target.classList.add("render-page-one-btn-active"),m.filter=e.target.textContent.trimStart().trimEnd(),m.page=1,f(b(m)),F(B),(o.muscles||o.bodypart||o.equipment)&&ae(o),o.page=1,l.removeEventListener("click",I),h.addEventListener("click",_),l.addEventListener("click",w))},w=e=>{m.page=parseInt(e.target.textContent),f(b(m))};l.addEventListener("click",w);Q.addEventListener("click",te);function _(e){e.target.closest(".render-page-one-item")&&(Y(e.target.dataset.name),o[e.target.dataset.filter]=e.target.dataset.name,T(o),U(B),l.addEventListener("click",I),l.removeEventListener("click",w),h.removeEventListener("click",_))}function I(e){if(!e.target.closest(".render-pagination-btn"))return;o.page=e.target.textContent;const t=parseInt(e.target.dataset.num);q!==e.target.textContent&&T(o,t),q=e.target.textContent}function ae(e){delete e.muscles,delete e.bodypart,delete e.equipment}const ne=document.querySelector(".footer-input"),u=e=>{k.show({position:"topRight",messageColor:"#FFFFFF",backgroundColor:"#EF4040",titleSize:"8px",closeOnEscape:!0,...e})},se=async e=>{e.preventDefault();const t=e.target.email.value;if(!t.trim()){u({message:"Email is required."});return}const a={email:t};if(ne.checkValidity())try{const n=await v.post("subscription",a);console.log("Response:",n),n.status===201?u({backgroundColor:"#7e847f",message:"We are excited to have you on board! 🎉 Thank you for subscribing to new exercises on Energy Flow. You have just taken a significant step towards improving your fitness and well-being."}):u({message:"Subscription failed"})}catch(n){console.error("Error:",n),n.response&&n.response.status===409?u({message:"Email already exists. Please use a different email address."}):u({message:"An error occurred while processing your request."})}},y=document.querySelector(".modal-trane-background"),oe=document.querySelector(".render-page-one-list"),re=async e=>{const a=(await v.get(`exercises/${e}`)).data,n=`<div class="modal-trane">
     <button class="modal-trane-btn-close" type="button">
       <svg height="28" width="28" style="stroke: black">
-        <use href="${m}#icon-x"></use>
+        <use href="${p}#icon-x"></use>
       </svg>
     </button>
     <div class="modal-trane-img-container">
