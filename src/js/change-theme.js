@@ -32,7 +32,7 @@ function saveOrRemoveThemeLocalStorage() {
 function addDarkStyles() {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = '././css/layout/dark-theme.css';
+  link.href = '.././css/layout/dark-theme.css';
   link.id = 'dynamicStyles';
   document.head.appendChild(link);
 }
