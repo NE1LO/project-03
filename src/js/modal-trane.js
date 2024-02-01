@@ -2,6 +2,7 @@ import iziToast from 'izitoast';
 import { createStarsMarkup } from './getMarkup/createStarsMarkup';
 import { openModalRating } from './modal-rating';
 import { apiInstance } from './services/api';
+import icons from '../img/symbol-defs.svg';
 
 const modal = document.querySelector('.modal-trane-background');
 const openModallist = document.querySelector('.render-page-one-list');
@@ -12,7 +13,7 @@ const getElemById = async id => {
   const markup = `<div class="modal-trane">
     <button class="modal-trane-btn-close" type="button">
       <svg height="28" width="28" style="stroke: black">
-        <use href="../img/symbol-defs.svg#icon-x"></use>
+        <use href="${icons}#icon-x"></use>
       </svg>
     </button>
     <div class="modal-trane-img-container">
