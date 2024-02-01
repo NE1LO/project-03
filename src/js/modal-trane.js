@@ -12,7 +12,7 @@ const getElemById = async id => {
   const markup = `<div class="modal-trane">
     <button class="modal-trane-btn-close" type="button">
       <svg height="28" width="28" style="stroke: black">
-        <use href="./img/symbol-defs.svg#icon-x"></use>
+        <use href="././img/symbol-defs.svg#icon-x"></use>
       </svg>
     </button>
     <div class="modal-trane-img-container">
