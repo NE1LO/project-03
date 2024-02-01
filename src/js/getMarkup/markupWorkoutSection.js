@@ -27,7 +27,7 @@ export function createsStringOfWorkoutCardElements(arrayOfObjects, params) {
 			</div>
 			<button type="button" class="workout-card__link-start" data-id="${_id}">
 				Start
-				<svg class="workout-card__link-icon" width="16" height="16">
+				<svg class="workout-card__link-icon" width="16" height="16" style="stroke: #000; fill:#000">
 					<use class="icon-arrow" href="${icons}#icon-arrow"></use>
 				</svg>
 			</button>
@@ -35,7 +35,7 @@ export function createsStringOfWorkoutCardElements(arrayOfObjects, params) {
 
 		<h3 class="workout-card__title">
 			<svg class="workout-card__title-icon">
-				<use class="icon-icon" href="../../img/symbol-defs.svg#icon-icon"></use>
+				<use class="icon-icon" href="${icons}#icon-icon"></use>
 			</svg>
 			${name[0].toUpperCase() + name.slice(1)}
 		</h3>

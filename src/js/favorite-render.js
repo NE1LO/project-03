@@ -61,11 +61,11 @@ const ifLocalStorageIs = result => {
           <div class="workout-card__block">
             <div class="workout-card__block-top">
               <div class="workout-card__block_button-rating">
-                <button type="button" class="workout-card__button-workout">
+                <p class="workout-card__text-workout">
                   Workout
-                </button>
+                </p>
                 <div class="workout-card__rating-block">
-                   <svg class="workout-card__basket-icon ${id}">
+                   <svg class="workout-card__basket-icon ${id}" width="24" height="24">
                     <use
                       class="icon-basket ${id}"
                       href="${icons}#icon-trash"
@@ -85,7 +85,7 @@ const ifLocalStorageIs = result => {
             </div>
 
             <h3 class="workout-card__title">
-              <svg class="workout-card__title-icon">
+              <svg class="workout-card__title-icon"  width="24" height="24">
                 <use
                   class="icon-icon"
                   href="${icons}#icon-icon"
