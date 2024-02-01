@@ -1,5 +1,7 @@
+@import url(./layout/dark-theme.css);
 @import url(./base/container.css);
 @import url(./base/base.css);
+
 @import url(./animation.css);
 
 @import url(./layout/burger-menu.css);
@@ -16,12 +18,10 @@
 @import url(./layout/workout-card.css);
 @import url(./layout/favorite-exercise.css);
 @import url(./layout/form-search.css);
-/* @import url(./layout/important-minutes.css); */
-
 
 @import url(./layout/change-theme.css);
 
-
+/* @import url(./layout/important-minutes.css); */
 
 @font-face {
   font-family: 'DM Sans';
