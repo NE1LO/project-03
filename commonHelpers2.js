@@ -1,10 +1,10 @@
-import{d as x,b as $,h as C,s as W,a as v,c as U,o as N,n as H}from"./assets/change-theme-e269b92f.js";import{i as y}from"./assets/vendor-0a7943b3.js";const k=async e=>{const t=i=>{const n=i;if(n==="Muscles")return n.toLowerCase();if(n==="Body parts")return"bodypart";if(n==="Equipment")return n.toLowerCase()},a={...e},s=await x.getFilters(a),r=s.data.results;return $(s.data.totalPages,e.page),r.reduce((i,n)=>i+` <li class="render-page-one-item" data-filter="${t(e.filter)}" data-name="${n.name}">
-            <img src="${n.imgUrl}" alt="" />
+import{d as x,b as C,i as m,h as F,s as U,a as v,c as N,o as H,n as z}from"./assets/change-theme-a4b60a10.js";import{i as k}from"./assets/vendor-0a7943b3.js";const b=async e=>{const t=i=>{const s=i;if(s==="Muscles")return s.toLowerCase();if(s==="Body parts")return"bodypart";if(s==="Equipment")return s.toLowerCase()},a={...e},n=await x.getFilters(a),r=n.data.results;return C(n.data.totalPages,e.page),r.reduce((i,s)=>i+` <li class="render-page-one-item" data-filter="${t(e.filter)}" data-name="${s.name}">
+            <img src="${s.imgUrl}" alt="" />
             <div class="render-page-one-img-container">
-              <p class="render-page-one-item-title">${n.name}</p>
-              <p class="render-page-one-item-zones">${n.filter}</p>
+              <p class="render-page-one-item-title">${s.name}</p>
+              <p class="render-page-one-item-zones">${s.filter}</p>
             </div>
-          </li>`,"")},z=document.querySelector(".render-page-one-list"),g=async e=>{const t=await e;z.innerHTML=t},E=e=>{if(e.muscles)return["muscles",e.muscles];if(e.bodypart)return["bodypart",e.bodypart];if(e.equipment)return["equipment",e.equipment]};function F(e,t){return e.map(({_id:a,bodyPart:s,name:r,target:d,rating:i,burnedCalories:n,time:A})=>`<li class="workout-card__item" data-filter="${E(t)[0]}" data-name="${E(t)[1]}" >
+          </li>`,"")},D=document.querySelector(".render-page-one-list"),f=async e=>{const t=await e;D.innerHTML=t},S=e=>{if(e.muscles)return["muscles",e.muscles];if(e.bodypart)return["bodypart",e.bodypart];if(e.equipment)return["equipment",e.equipment]};function M(e,t){return e.map(({_id:a,bodyPart:n,name:r,target:d,rating:i,burnedCalories:s,time:W})=>`<li class="workout-card__item" data-filter="${S(t)[0]}" data-name="${S(t)[1]}" >
 	<div class="workout-card__block">
 		<div class="workout-card__block-top">
 			<div class="workout-card__block_button-rating">
@@ -12,17 +12,17 @@ import{d as x,b as $,h as C,s as W,a as v,c as U,o as N,n as H}from"./assets/cha
 				<!-- <div class="workout-card__rating-block"> -->
 				<p class="workout-card__rating-text"> ${i.toFixed(1)} </p>
 				<svg class="workout-card__rating-icon">
-					<use class="icon-star" href="../../img/symbol-defs.svg#icon-star-gold"></use>
+					<use class="icon-star" href="${m}#icon-star-gold"></use>
 				</svg>
 				<svg class="workout-card__basket-icon" style="display: none">
-					<use class="icon-basket" href="../../img/symbol-defs.svg#icon-trash"></use>
+					<use class="icon-basket" href="${m}#icon-trash"></use>
 				</svg>
 				<!-- </div> -->
 			</div>
 			<button type="button" class="workout-card__link-start" data-id="${a}">
 				Start
 				<svg class="workout-card__link-icon" width="16" height="16">
-					<use class="icon-arrow" href="../../img/symbol-defs.svg#icon-arrow"></use>
+					<use class="icon-arrow" href="${m}#icon-arrow"></use>
 				</svg>
 			</button>
 		</div>
@@ -37,12 +37,12 @@ import{d as x,b as $,h as C,s as W,a as v,c as U,o as N,n as H}from"./assets/cha
 		<ul class="workout-card__statistic_list">
 			<li class="workout-card__statistic_item">
 				<p class="workout-card__statistic_text">
-					<span class="secondary-color-text">Burned calories:</span> ${n} / ${A} min
+					<span class="secondary-color-text">Burned calories:</span> ${s} / ${W} min
 				</p>
 			</li>
 			<li class="workout-card__statistic_item">
 				<p class="workout-card__statistic_text">
-					<span class="secondary-color-text">Body part:</span> ${s[0].toUpperCase()+s.slice(1)}
+					<span class="secondary-color-text">Body part:</span> ${n[0].toUpperCase()+n.slice(1)}
 				</p>
 			</li>
 			<li class="workout-card__statistic_item">
@@ -53,10 +53,10 @@ import{d as x,b as $,h as C,s as W,a as v,c as U,o as N,n as H}from"./assets/cha
 		</ul>
 
 	</div>
-</li>`).join("")}const D=document.querySelector(".render-page-one-list"),j=document.querySelector(".render-btn-list-pagination"),M=async(e,t)=>{try{const a=await x.getWorkout(e);D.innerHTML=F(a.data.results,e),a.data.totalPages===1&&C(j),$(a.data.totalPages,e.page,t)}catch(a){console.log(a)}},G=document.querySelector(".render-page-one-slesh"),S=document.querySelector(".render-page-one-title-part"),J=e=>{e=e.split(""),e[0]=e[0].toUpperCase(),e=e.join(""),S.style.display="inline-block",G.style.display="inline-block",S.textContent=e},l=document.querySelector(".render-btn-list-pagination"),Y=document.querySelector(".render-page-one-list-btn"),Q=document.querySelectorAll(".render-page-one-btn"),b=document.querySelector(".render-page-one-list"),T=document.querySelector(".form-search"),V=document.querySelector(".render-page-one-slesh"),K=document.querySelector(".render-page-one-title-part");document.querySelectorAll(".render-pagination-btn");let q=0;b.addEventListener("click",w);const B=getComputedStyle(document.querySelector("body")).width,X=parseInt(B)<768?8:12,p={limit:X,page:1,filter:"Muscles"},Z=parseInt(B)<768?8:9,o={page:1,limit:Z},ee=e=>{e.target.nodeName==="BUTTON"&&(V.style.display="none",K.style.display="none",l.style.display="flex",Q.forEach(t=>t.classList.remove("render-page-one-btn-active")),e.target.classList.add("render-page-one-btn-active"),p.filter=e.target.textContent.trimStart().trimEnd(),p.page=1,g(k(p)),C(T),(o.muscles||o.bodypart||o.equipment)&&te(o),o.page=1,l.removeEventListener("click",P),b.addEventListener("click",w),l.addEventListener("click",h))},h=e=>{p.page=parseInt(e.target.textContent),g(k(p))};l.addEventListener("click",h);Y.addEventListener("click",ee);function w(e){e.target.closest(".render-page-one-item")&&(J(e.target.dataset.name),o[e.target.dataset.filter]=e.target.dataset.name,M(o),W(T),l.addEventListener("click",P),l.removeEventListener("click",h),b.removeEventListener("click",w))}function P(e){if(!e.target.closest(".render-pagination-btn"))return;o.page=e.target.textContent;const t=parseInt(e.target.dataset.num);q!==e.target.textContent&&M(o,t),q=e.target.textContent}function te(e){delete e.muscles,delete e.bodypart,delete e.equipment}const ae=document.querySelector(".footer-input"),u=e=>{y.show({position:"topRight",messageColor:"#FFFFFF",backgroundColor:"#EF4040",titleSize:"8px",closeOnEscape:!0,...e})},se=async e=>{e.preventDefault();const t=e.target.email.value;if(!t.trim()){u({message:"Email is required."});return}const a={email:t};if(ae.checkValidity())try{const s=await v.post("subscription",a);console.log("Response:",s),s.status===201?u({backgroundColor:"#7e847f",message:"We are excited to have you on board! 🎉 Thank you for subscribing to new exercises on Energy Flow. You have just taken a significant step towards improving your fitness and well-being."}):u({message:"Subscription failed"})}catch(s){console.error("Error:",s),s.response&&s.response.status===409?u({message:"Email already exists. Please use a different email address."}):u({message:"An error occurred while processing your request."})}},f=document.querySelector(".modal-trane-background"),ne=document.querySelector(".render-page-one-list"),oe=async e=>{const a=(await v.get(`exercises/${e}`)).data,s=`<div class="modal-trane">
+</li>`).join("")}const j=document.querySelector(".render-page-one-list"),G=document.querySelector(".render-btn-list-pagination"),T=async(e,t)=>{try{const a=await x.getWorkout(e);j.innerHTML=M(a.data.results,e),a.data.totalPages===1&&F(G),C(a.data.totalPages,e.page,t)}catch(a){console.log(a)}},J=document.querySelector(".render-page-one-slesh"),q=document.querySelector(".render-page-one-title-part"),Y=e=>{e=e.split(""),e[0]=e[0].toUpperCase(),e=e.join(""),q.style.display="inline-block",J.style.display="inline-block",q.textContent=e},l=document.querySelector(".render-btn-list-pagination"),Q=document.querySelector(".render-page-one-list-btn"),V=document.querySelectorAll(".render-page-one-btn"),h=document.querySelector(".render-page-one-list"),B=document.querySelector(".form-search"),K=document.querySelector(".render-page-one-slesh"),X=document.querySelector(".render-page-one-title-part");document.querySelectorAll(".render-pagination-btn");let $=0;h.addEventListener("click",_);const P=getComputedStyle(document.querySelector("body")).width,Z=parseInt(P)<768?8:12,p={limit:Z,page:1,filter:"Muscles"},ee=parseInt(P)<768?8:9,o={page:1,limit:ee},te=e=>{e.target.nodeName==="BUTTON"&&(K.style.display="none",X.style.display="none",l.style.display="flex",V.forEach(t=>t.classList.remove("render-page-one-btn-active")),e.target.classList.add("render-page-one-btn-active"),p.filter=e.target.textContent.trimStart().trimEnd(),p.page=1,f(b(p)),F(B),(o.muscles||o.bodypart||o.equipment)&&ae(o),o.page=1,l.removeEventListener("click",I),h.addEventListener("click",_),l.addEventListener("click",w))},w=e=>{p.page=parseInt(e.target.textContent),f(b(p))};l.addEventListener("click",w);Q.addEventListener("click",te);function _(e){e.target.closest(".render-page-one-item")&&(Y(e.target.dataset.name),o[e.target.dataset.filter]=e.target.dataset.name,T(o),U(B),l.addEventListener("click",I),l.removeEventListener("click",w),h.removeEventListener("click",_))}function I(e){if(!e.target.closest(".render-pagination-btn"))return;o.page=e.target.textContent;const t=parseInt(e.target.dataset.num);$!==e.target.textContent&&T(o,t),$=e.target.textContent}function ae(e){delete e.muscles,delete e.bodypart,delete e.equipment}const ne=document.querySelector(".footer-input"),u=e=>{k.show({position:"topRight",messageColor:"#FFFFFF",backgroundColor:"#EF4040",titleSize:"8px",closeOnEscape:!0,...e})},se=async e=>{e.preventDefault();const t=e.target.email.value;if(!t.trim()){u({message:"Email is required."});return}const a={email:t};if(ne.checkValidity())try{const n=await v.post("subscription",a);console.log("Response:",n),n.status===201?u({backgroundColor:"#7e847f",message:"We are excited to have you on board! 🎉 Thank you for subscribing to new exercises on Energy Flow. You have just taken a significant step towards improving your fitness and well-being."}):u({message:"Subscription failed"})}catch(n){console.error("Error:",n),n.response&&n.response.status===409?u({message:"Email already exists. Please use a different email address."}):u({message:"An error occurred while processing your request."})}},y=document.querySelector(".modal-trane-background"),oe=document.querySelector(".render-page-one-list"),re=async e=>{const a=(await v.get(`exercises/${e}`)).data,n=`<div class="modal-trane">
     <button class="modal-trane-btn-close" type="button">
       <svg height="28" width="28" style="stroke: black">
-        <use href="../img/symbol-defs.svg#icon-x"></use>
+        <use href="${m}#icon-x"></use>
       </svg>
     </button>
     <div class="modal-trane-img-container">
@@ -67,7 +67,7 @@ import{d as x,b as $,h as C,s as W,a as v,c as U,o as N,n as H}from"./assets/cha
         <h2 class="modal-trane-title">Air bake</h2>
         <div class="modal-trane-rating-star">
           <p class="modal-trane-ratind">${a.rating}</p>
-          <ul class="modal-trane-list-stars">${U(a.rating)}</ul>
+          <ul class="modal-trane-list-stars">${N(a.rating)}</ul>
         </div>
       </div>
       <ul class="modal-trane-list-information">
@@ -106,14 +106,14 @@ import{d as x,b as $,h as C,s as W,a as v,c as U,o as N,n as H}from"./assets/cha
         </li>
       </ul>
     </div>
-  </div>`;f.innerHTML=s;const r=document.querySelector(".modal-trane-btn-close"),d=document.querySelector(".modal-trane-btn-add-favorites"),i=document.querySelector(".modal-trane-btn-rating");r.addEventListener("click",_),d.addEventListener("click",()=>ie(e)),i.addEventListener("click",N)};function re(e){if(e.target.classList.contains("workout-card__link-start")){const t=e.target;oe(t.dataset.id),f.classList.add("modal-trane-background-active"),document.addEventListener("click",I),document.addEventListener("keydown",R)}}function _(){f.classList.remove("modal-trane-background-active"),document.removeEventListener("click",I),document.removeEventListener("keydown",R)}function I(e){e.target===f&&_()}function R(e){e.key==="Escape"&&_()}function ie(e){let t=JSON.parse(localStorage.getItem("favorites"))||[];t.includes(e)?y.error({title:"Error",message:"Has already",position:"topCenter"}):(t.push(e),localStorage.setItem("favorites",JSON.stringify(t)),y.success({message:"Add favorite!",position:"topCenter"}))}ne.addEventListener("click",re);const le=document.querySelector(".render-page-one-list"),ce=document.querySelector(".render-btn-list-pagination"),de=()=>{const e=`<p class="render-page-one-no">
+  </div>`;y.innerHTML=n;const r=document.querySelector(".modal-trane-btn-close"),d=document.querySelector(".modal-trane-btn-add-favorites"),i=document.querySelector(".modal-trane-btn-rating");r.addEventListener("click",E),d.addEventListener("click",()=>le(e)),i.addEventListener("click",H)};function ie(e){if(e.target.classList.contains("workout-card__link-start")){const t=e.target;re(t.dataset.id),y.classList.add("modal-trane-background-active"),document.addEventListener("click",R),document.addEventListener("keydown",O)}}function E(){y.classList.remove("modal-trane-background-active"),document.removeEventListener("click",R),document.removeEventListener("keydown",O)}function R(e){e.target===y&&E()}function O(e){e.key==="Escape"&&E()}function le(e){let t=JSON.parse(localStorage.getItem("favorites"))||[];t.includes(e)?k.error({title:"Error",message:"Has already",position:"topCenter"}):(t.push(e),localStorage.setItem("favorites",JSON.stringify(t)),k.success({message:"Add favorite!",position:"topCenter"}))}oe.addEventListener("click",ie);const ce=document.querySelector(".render-page-one-list"),de=document.querySelector(".render-btn-list-pagination"),ue=()=>{const e=`<p class="render-page-one-no">
   Unfortunately, <span class="render-page-one-no-part">no results</span> were
   found. You may want to consider other search options to find the exercise you
   are looking for. Our range is wide and you have the opportunity to find more
   options that suit your needs.
-</p>`;le.innerHTML=e,ce.style.display="none"},ue=getComputedStyle(document.querySelector("body")).width,pe=parseInt(ue)<768?8:9,me=document.querySelector(".form-search"),L=document.querySelector(".render-page-one-list"),m=document.querySelector(".render-btn-list-pagination"),ge=(e,t)=>{let a="";for(let s=1;s<=e;s++){let r=` <li>
+</p>`;ce.innerHTML=e,de.style.display="none"},pe=getComputedStyle(document.querySelector("body")).width,me=parseInt(pe)<768?8:9,ge=document.querySelector(".form-search"),L=document.querySelector(".render-page-one-list"),g=document.querySelector(".render-btn-list-pagination"),fe=(e,t)=>{let a="";for(let n=1;n<=e;n++){let r=` <li>
         <button
           class="render-pagination-btn-search"
           type="button"
-        >${s}</button></li>`;a+=r}m.innerHTML=a,m.children[t-1].children[0].classList.add("render-pagination-btn-active")},c={limit:pe,page:1},fe=async e=>await v.get("exercises",{params:e}),O=async()=>{m.style.display="flex";const e=await fe(c);if(!e.data.results.length){de();return}g(F(e.data.results,c)),ge(e.data.totalPages,c.page)},ye=async e=>{e.preventDefault();const t=L.children[0].dataset.filter,a=L.children[0].dataset.name;c[t]=a,c.keyword=e.target.query.value,m.addEventListener("click",ve),O()},ve=e=>{c.page=parseInt(e.target.textContent),O()};me.addEventListener("submit",ye);g(k({page:1,filter:"Muscles"}));const ke=document.querySelector(".form");ke.addEventListener("submit",se);H();
+        >${n}</button></li>`;a+=r}g.innerHTML=a,g.children[t-1].children[0].classList.add("render-pagination-btn-active")},c={limit:me,page:1},ye=async e=>await v.get("exercises",{params:e}),A=async()=>{g.style.display="flex";const e=await ye(c);if(!e.data.results.length){ue();return}f(M(e.data.results,c)),fe(e.data.totalPages,c.page)},ke=async e=>{e.preventDefault();const t=L.children[0].dataset.filter,a=L.children[0].dataset.name;c[t]=a,c.keyword=e.target.query.value,g.addEventListener("click",ve),A()},ve=e=>{c.page=parseInt(e.target.textContent),A()};ge.addEventListener("submit",ke);f(b({page:1,filter:"Muscles"}));const be=document.querySelector(".form");be.addEventListener("submit",se);z();
 //# sourceMappingURL=commonHelpers2.js.map
