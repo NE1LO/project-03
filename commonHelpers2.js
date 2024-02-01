@@ -1,4 +1,4 @@
-import{d as x,b as $,h as C,s as W,a as v,c as U,o as N,n as H}from"./assets/change-theme-6d5902fe.js";import{i as y}from"./assets/vendor-0a7943b3.js";const k=async e=>{const t=i=>{const n=i;if(n==="Muscles")return n.toLowerCase();if(n==="Body parts")return"bodypart";if(n==="Equipment")return n.toLowerCase()},a={...e},s=await x.getFilters(a),r=s.data.results;return $(s.data.totalPages,e.page),r.reduce((i,n)=>i+` <li class="render-page-one-item" data-filter="${t(e.filter)}" data-name="${n.name}">
+import{d as x,b as $,h as C,s as W,a as v,c as U,o as N,n as H}from"./assets/change-theme-e269b92f.js";import{i as y}from"./assets/vendor-0a7943b3.js";const k=async e=>{const t=i=>{const n=i;if(n==="Muscles")return n.toLowerCase();if(n==="Body parts")return"bodypart";if(n==="Equipment")return n.toLowerCase()},a={...e},s=await x.getFilters(a),r=s.data.results;return $(s.data.totalPages,e.page),r.reduce((i,n)=>i+` <li class="render-page-one-item" data-filter="${t(e.filter)}" data-name="${n.name}">
             <img src="${n.imgUrl}" alt="" />
             <div class="render-page-one-img-container">
               <p class="render-page-one-item-title">${n.name}</p>
