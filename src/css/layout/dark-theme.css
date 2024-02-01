@@ -64,9 +64,6 @@ body {
   color: #f6f6f6;
   stroke: #f6f6f6;
 }
-.icon-arrow {
-  stroke: #f6f6f6;
-}
 
 .secondary-color-text {
   color: #f6f6f6;
@@ -102,7 +99,6 @@ body {
   color: #f6f6f6;
 }
 .modal-trane-btn-rating {
-  color: #f6f6f6;
   border: 1px solid #f6f6f6;
 }
 .modal-rating {
