@@ -1,6 +1,8 @@
 import { apiInstance } from './services/api';
 import { btnRender } from '../js/btnRender';
 import { hidesElementFromPage } from './elementManagement';
+import icons from '/img/symbol-defs.svg';
+import png from '../img/favorite-exercise/favorite-dumbbell.png';
 
 const container = document.querySelector('.favorites-exercise-container');
 const btnPagination = document.querySelector('.render-btn-list-pagination');
@@ -36,7 +38,7 @@ const ifLocalStorageClean = () => {
   const markupNotFound = `<div class="favorites-exercise-not-found-container">
         <img
           class="favorites-exercise-img"
-          src="././img/favorite-exercise/favorite-dumbbell.png"
+          src="${png}"
           alt="dumbbell"
         />
         <h3 class="favorites-exercise-not-found">
@@ -66,7 +68,7 @@ const ifLocalStorageIs = result => {
                    <svg class="workout-card__basket-icon ${id}">
                     <use
                       class="icon-basket ${id}"
-                      href="././img/symbol-defs.svg#icon-trash"
+                      href="${icons}#icon-trash"
                     ></use></svg>
                 </div>
               </div>
@@ -76,7 +78,7 @@ const ifLocalStorageIs = result => {
                 <svg class="workout-card__link-icon" width="16" height='16'>
                   <use
                     class="icon-arrow"
-                    href="././img/symbol-defs.svg#icon-arrow"
+                    href="${icons}#icon-arrow"
                   ></use>
                 </svg>
               </button>
@@ -86,7 +88,7 @@ const ifLocalStorageIs = result => {
               <svg class="workout-card__title-icon">
                 <use
                   class="icon-icon"
-                  href="././img/symbol-defs.svg#icon-icon"
+                  href="${icons}#icon-icon"
                 ></use>
               </svg>
               ${name[0].toUpperCase() + name.slice(1)}

@@ -3,6 +3,7 @@ const checkFilter = obg => {
   if (obg.bodypart) return ['bodypart', obg.bodypart];
   if (obg.equipment) return ['equipment', obg.equipment];
 };
+import icons from '../../img/symbol-defs.svg';
 
 export function createsStringOfWorkoutCardElements(arrayOfObjects, params) {
   return arrayOfObjects
@@ -17,17 +18,17 @@ export function createsStringOfWorkoutCardElements(arrayOfObjects, params) {
 				<!-- <div class="workout-card__rating-block"> -->
 				<p class="workout-card__rating-text"> ${rating.toFixed(1)} </p>
 				<svg class="workout-card__rating-icon">
-					<use class="icon-star" href="../../img/symbol-defs.svg#icon-star-gold"></use>
+					<use class="icon-star" href="${icons}#icon-star-gold"></use>
 				</svg>
 				<svg class="workout-card__basket-icon" style="display: none">
-					<use class="icon-basket" href="../../img/symbol-defs.svg#icon-trash"></use>
+					<use class="icon-basket" href="${icons}#icon-trash"></use>
 				</svg>
 				<!-- </div> -->
 			</div>
 			<button type="button" class="workout-card__link-start" data-id="${_id}">
 				Start
 				<svg class="workout-card__link-icon" width="16" height="16">
-					<use class="icon-arrow" href="../../img/symbol-defs.svg#icon-arrow"></use>
+					<use class="icon-arrow" href="${icons}#icon-arrow"></use>
 				</svg>
 			</button>
 		</div>
