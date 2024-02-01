@@ -130,7 +130,14 @@
     transition: 0.2s;
   }
 }
-@media screen and (min-width: 1280px) {
+
+.sm-list__item-swith-theme {
+  position: absolute;
+  left: 105px;
+  top: 45px;
+}
+
+@media screen and (min-width: 1440px) {
   .button-burger {
     display: none;
   }
@@ -149,6 +156,12 @@
 
   .header-nav {
     margin: 0 64px;
+  }
+
+  .sm-list__item-swith-theme {
+    position: absolute;
+    left: -100px;
+    top: 0px;
   }
 
   .icon:hover,
