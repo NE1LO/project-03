@@ -25,6 +25,6 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('./DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format('woff'),
-    url('./DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf') format('woff');
+  src: url('./fonts/DMSans-9ptRegular.woff') format('woff'),
+    url('./fonts/DMSans-9ptRegular.woff2') format('woff2');
 }
