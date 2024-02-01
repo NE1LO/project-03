@@ -107,6 +107,7 @@
 
 .workout-card__link-icon {
   stroke: #1b1b1b;
+  fill: #1b1b1b;
   pointer-events: none;
 }
 

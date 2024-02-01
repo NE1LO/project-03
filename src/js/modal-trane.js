@@ -10,6 +10,7 @@ const openModallist = document.querySelector('.render-page-one-list');
 const getElemById = async id => {
   const data = await apiInstance.get(`exercises/${id}`);
   const response = data.data;
+  console.log(response);
   const markup = `<div class="modal-trane">
     <button class="modal-trane-btn-close" type="button">
       <svg height="28" width="28" style="stroke: black">
@@ -21,7 +22,7 @@ const getElemById = async id => {
     </div>
     <div>
       <div class="modal-trane-name-rating">
-        <h2 class="modal-trane-title">Air bake</h2>
+        <h2 class="modal-trane-title">${response.name}</h2>
         <div class="modal-trane-rating-star">
           <p class="modal-trane-ratind">${response.rating}</p>
           <ul class="modal-trane-list-stars">${createStarsMarkup(
