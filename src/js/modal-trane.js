@@ -56,7 +56,8 @@ const getElemById = async id => {
       <ul class="modal-trane-list-btn">
         <li>
           <button class="modal-trane-btn-add-favorites" type="button">
-            Add&nbsp;to&nbsp;favorites&nbsp;&#x2661;
+            Add&nbsp;to&nbsp;favorites&nbsp; <svg height="24" width="24">
+            <use href="${icons}#icon-heart"></use> </svg>
           </button>
         </li>
         <li>
